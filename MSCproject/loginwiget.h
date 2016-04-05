@@ -11,6 +11,7 @@
 #include <QDebug>
 #include <QSettings>
 #include "xing.h"
+#include <tcpserverframe.h>
 
 #define kor(str) QString::fromLocal8Bit(str)
 
@@ -20,7 +21,8 @@ class Loginwiget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit Loginwiget(xing *x1,QWidget *parent = 0);
+    explicit Loginwiget(xing *x1,Tcpserverframe *tmf,QWidget *parent = 0);
+    Tcpserverframe *tmf;
 signals:
 
 public slots:

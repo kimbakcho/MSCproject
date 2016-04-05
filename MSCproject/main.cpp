@@ -2,10 +2,13 @@
 #include "loginwiget.h"
 #include <QApplication>
 #include <xing.h>
+#include <QVector>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QVector<QByteArray> *protocollist;
+    protocollist = new QVector<QByteArray>();
 //    Widget w;
 //    w.show();
     xing *x1;
@@ -20,8 +23,12 @@ int main(int argc, char *argv[])
     }else{
          qDebug()<<kor("초기화 실패");
     }
-    Loginwiget *login = new Loginwiget(x1);
+    Tcpserverframe *tmf = new Tcpserverframe();
+    Loginwiget *login = new Loginwiget(x1,tmf);
     login->show();
+
+
+
 
 
     return a.exec();

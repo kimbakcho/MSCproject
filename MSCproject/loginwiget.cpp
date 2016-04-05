@@ -1,9 +1,10 @@
 #include "loginwiget.h"
 
 
-Loginwiget::Loginwiget(xing *x1, QWidget *parent) : QWidget(parent)
+Loginwiget::Loginwiget(xing *x1,Tcpserverframe *tmf, QWidget *parent) : QWidget(parent)
 {
     this->x1 = x1;
+    this->tmf = tmf;
     glay_1 = new QGridLayout();
     lbid = new QLabel("IP");
     leid = new QLineEdit();
@@ -49,7 +50,10 @@ void Loginwiget::loginfuntion(){
         //---------------------------------------------------------
         qDebug()<<"join";
 
-        //mf->show();
+        tmf->show();
+
+        setVisible(false);
+
 
 
        // close();

@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,7 +15,11 @@ TEMPLATE = app
 SOURCES += main.cpp\
         widget.cpp \
     xing.cpp \
-    loginwiget.cpp
+    loginwiget.cpp \
+    tcpserverframe.cpp \
+    servertheard.cpp \
+    qserversocket.cpp \
+    qconnection.cpp
 
 HEADERS  += widget.h \
     xing.h \
@@ -188,4 +192,8 @@ HEADERS  += widget.h \
     packet/YK3.h \
     packet/YOC.h \
     packet/YS3.h \
-    loginwiget.h
+    loginwiget.h \
+    tcpserverframe.h \
+    servertheard.h \
+    qserversocket.h \
+    qconnection.h
