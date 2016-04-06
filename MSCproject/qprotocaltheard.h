@@ -7,6 +7,9 @@
 #include <QDebug>
 #include <qrichdata.h>
 #include <QMap>
+#include <QString>
+
+#define kor(str) QString::fromLocal8Bit(str)
 
 class qprotocaltheard : public QThread
 {

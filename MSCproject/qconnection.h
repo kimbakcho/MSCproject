@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QTcpSocket>
 #include <QVector>
+#define kor(str) QString::fromLocal8Bit(str)
 class Qconnection : public QTcpSocket
 {
     Q_OBJECT

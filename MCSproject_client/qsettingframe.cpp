@@ -20,8 +20,6 @@ QSettingframe::QSettingframe(QTcsocket *tcsocket,QVector<webwiget*> *vecweb,QWid
     gridlayout->addWidget(QLwebwigetcount,2,0);
     gridlayout->addWidget(QEwebwigetcount,2,1);
 
-
-
     setLayout(gridlayout);
 
     //--read---
@@ -75,7 +73,7 @@ void QSettingframe::Qstartbutton_push(){
         tcsocket = new QTcsocket(QEsetip->text(),QEsetport->text().toInt());
     }
     for(int i=0;i<QEwebwigetcount->text().toInt();i++){
-         webwiget *tempwebbiget = new webwiget();
+         webwiget *tempwebbiget = new webwiget(tcsocket);
          vecweb->append(tempwebbiget);
          //tempwebbiget->show();
          tempwebbiget->autostep();

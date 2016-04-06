@@ -10,8 +10,8 @@ qprotocaltheard::qprotocaltheard(QVector<QByteArray> *protocollist,QMap<QString,
 void qprotocaltheard::run(){
     while(runflag){
         while(!protocollist->isEmpty()){
-            QString data = QString(protocollist->takeFirst());
-            qDebug()<<data;
+            QByteArray data = protocollist->takeFirst();
+            qDebug()<<kor(data);
         }
     }
 }

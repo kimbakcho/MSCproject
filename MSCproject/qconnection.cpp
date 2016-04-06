@@ -8,7 +8,6 @@ Qconnection::Qconnection(QVector<QByteArray> *protocollist)
 void Qconnection::readyforready(){
     readbuffer = readAll();
     int count = readbuffer.count();
-
     for(int i=0;i<count;i++){
         if((unsigned char)readbuffer.at(i)==0xAA){
            protocoldata.clear();

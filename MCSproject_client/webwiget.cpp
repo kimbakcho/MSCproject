@@ -1,18 +1,26 @@
 #include "webwiget.h"
 
-webwiget::webwiget()
+webwiget::webwiget(QTcsocket *tcsocket)
 {
+    timer = new QTimer();
     load(QUrl("http://rich-stock.com/"));
     qwf = this->page()->mainFrame();
+    this->tcsocket = tcsocket;
     connect(this,SIGNAL(loadFinished(bool)),this,SLOT(finishedpage(bool)));
+    connect(timer,SIGNAL(timeout()),this,SLOT(sitemoniter()));
     findstr1 =kor("매수가");
     findstr2 =kor("손절가");
     findstr3 =kor("1차목표");
     findstr4 =kor("대응");
 
     siteplaycount = 0;
+    tempsitecount = 0;
     urllastsite="http://rich-stock.com";
     vipcheck = false;
+
+    timer->setInterval(20000);
+    timer->start();
+
 
 }
 
@@ -126,6 +134,19 @@ void webwiget::finishedpage(bool flag){
                               .arg(hname_temp).arg(Cpricetemp).arg(Closspricetemp).arg(Cobjpricetemp).arg(reply_timeh).arg(reply_timem);
                     qDebug()<<kor("----------------------------------------");
                 }else{
+                    if(tcsocket != NULL){
+                        if(tcsocket->state()==QTcpSocket::ConnectedState){
+
+                            QString senddata = kor("free,hname,%1,price,%2,loos,%3,1ob,%4,timeh,%5,timem,%6")
+                                                          .arg(hname_temp).arg(Cpricetemp).arg(Closspricetemp).arg(Cobjpricetemp).arg(reply_timeh).arg(reply_timem);
+                            QByteArray result_send_data;
+                            result_send_data.append(0xAA);
+                            result_send_data.append(senddata);
+                            result_send_data.append(0xAB);
+                            tcsocket->write(result_send_data);
+                            tcsocket->flush();
+                        }
+                    }
                     qDebug()<<kor("free not contain name : %1 price : %2 loos : %3 1ob : %4 shcode = %5 time = %6 ")
                               .arg(hname_temp).arg(Cpricetemp).arg(Closspricetemp).arg(Cobjpricetemp).arg(reply_timeh).arg(reply_timem);
                     qDebug()<<kor("----------------------------------------");
@@ -209,5 +230,12 @@ void webwiget::finishedpage(bool flag){
         }
     }else if(!flag) {
         load(QUrl(str));
+    }
+}
+void webwiget::sitemoniter(){
+    if(tempsitecount==siteplaycount){
+         load(QUrl(urllastsite));
+    }else {
+        tempsitecount=siteplaycount;
     }
 }

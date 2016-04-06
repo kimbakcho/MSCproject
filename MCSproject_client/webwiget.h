@@ -13,14 +13,15 @@
 #include <QTime>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
-
+#include <QTimer>
+#include <qtcsocket.h>
 #define kor(str) QString::fromLocal8Bit(str)
 
 class webwiget : public QWebView
 {
     Q_OBJECT
 public:
-    explicit webwiget();
+    explicit webwiget(QTcsocket *tcsocket);
     QWebFrame *qwf;
     QWebElement document;
     QString findstr1;
@@ -30,14 +31,18 @@ public:
     QString urllastsite;
     QTime get_time;
     QDate get_date;
+    QTimer *timer;
     int siteplaycount;
+    int tempsitecount;
     bool vipcheck;
+    QTcsocket *tcsocket;
 
 signals:
 
 public slots:
     void autostep();
     void finishedpage(bool flag);
+    void sitemoniter();
 };
 
 #endif // WEBWIGET_H
