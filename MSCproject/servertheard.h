@@ -8,7 +8,7 @@ class Servertheard : public QThread
 {
     Q_OBJECT
 public:
-    explicit Servertheard(QObject *parent = 0);
+    explicit Servertheard();
 
 signals:
 

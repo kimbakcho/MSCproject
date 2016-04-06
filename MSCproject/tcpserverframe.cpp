@@ -1,7 +1,8 @@
 #include "tcpserverframe.h"
 
-Tcpserverframe::Tcpserverframe(QWidget *parent) : QWidget(parent)
+Tcpserverframe::Tcpserverframe(QVector<QByteArray> *protocollist,QWidget *parent) : QWidget(parent)
 {
+    this->protocollist = protocollist;
     QLsetip = new QLabel("Set ip");
     QEsetip = new QLineEdit();
     QLsetport = new QLabel("Set port");
@@ -16,6 +17,30 @@ Tcpserverframe::Tcpserverframe(QWidget *parent) : QWidget(parent)
     mgridlayout->addWidget(QServerstart,0,2,2,1);
 
     setLayout(mgridlayout);
+    //--read---
+    QSettings settings1("config.ini",QSettings::IniFormat);
+    settings1.beginGroup("setting");
+    QEsetport->setText(settings1.value("serverport").toByteArray());
+    settings1.endGroup();
+    //---------
+
+
+    connect(QServerstart,SIGNAL(clicked(bool)),this,SLOT(serverstart()));
+    connect(QEsetport,SIGNAL(textEdited(QString)),this,SLOT(QEsetport_change(QString)));
 
 }
+void Tcpserverframe::serverstart(){
 
+    if(serversocket == NULL){
+        int port = QEsetport->text().toInt();
+        serversocket = new QServersocket(port,protocollist);
+    }
+}
+void Tcpserverframe::QEsetport_change(QString str){
+    //write setting--------------------------------------------
+    QSettings settings2("config.ini",QSettings::IniFormat);
+    settings2.beginGroup("setting");
+    settings2.setValue("serverport",str.toLocal8Bit());
+    settings2.endGroup();
+    //---------------------------------------------------------
+}

@@ -3,12 +3,15 @@
 #include <QApplication>
 #include <xing.h>
 #include <QVector>
-
+#include <QMap>
+#include <qrichdata.h>
+#include <qprotocaltheard.h>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     QVector<QByteArray> *protocollist;
     protocollist = new QVector<QByteArray>();
+    QMap<QString,Qrichdata> *richdata = new QMap<QString,Qrichdata>();
 //    Widget w;
 //    w.show();
     xing *x1;
@@ -23,13 +26,12 @@ int main(int argc, char *argv[])
     }else{
          qDebug()<<kor("초기화 실패");
     }
-    Tcpserverframe *tmf = new Tcpserverframe();
+    Tcpserverframe *tmf = new Tcpserverframe(protocollist);
     Loginwiget *login = new Loginwiget(x1,tmf);
     login->show();
 
-
-
-
+    qprotocaltheard *protocalth = new qprotocaltheard(protocollist,richdata);
+    protocalth->start();
 
     return a.exec();
 }

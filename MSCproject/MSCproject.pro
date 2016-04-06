@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     tcpserverframe.cpp \
     servertheard.cpp \
     qserversocket.cpp \
-    qconnection.cpp
+    qconnection.cpp \
+    qprotocaltheard.cpp \
+    qrichdata.cpp
 
 HEADERS  += widget.h \
     xing.h \
@@ -196,4 +198,6 @@ HEADERS  += widget.h \
     tcpserverframe.h \
     servertheard.h \
     qserversocket.h \
-    qconnection.h
+    qconnection.h \
+    qprotocaltheard.h \
+    qrichdata.h

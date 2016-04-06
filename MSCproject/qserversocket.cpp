@@ -1,12 +1,13 @@
 #include "qserversocket.h"
 
-QServersocket::QServersocket(QObject *parent) : QObject(parent)
+QServersocket::QServersocket(int port,QVector<QByteArray> *protocollist)
 {
-   listen(QHostAddress::Any,20005);
+    this->protocollist = protocollist;
+    listen(QHostAddress::Any,port);
 }
 
 void QServersocket::incomingConnection(int socketDescriptor){
-    QTcpSocket *connection = new QTcpSocket();
+    Qconnection *connection = new Qconnection(protocollist);
     connection->setSocketDescriptor(socketDescriptor);
 
 

@@ -3,16 +3,21 @@
 
 #include <QObject>
 #include <QTcpSocket>
-
+#include <QVector>
 class Qconnection : public QTcpSocket
 {
     Q_OBJECT
 public:
-    explicit Qconnection(QObject *parent = 0);
+    explicit Qconnection(QVector<QByteArray> *protocollist);
+    QByteArray readbuffer;
+    QByteArray protocoldata;
+    QVector<QByteArray> *protocollist;
+    bool debug = false;
 
 signals:
 
 public slots:
+    void readyforready();
 };
 
 #endif // QCONNECTION_H
