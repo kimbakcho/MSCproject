@@ -6,6 +6,7 @@
 #include <QHostAddress>
 #include <QTimer>
 
+
 class QTcsocket : public QTcpSocket
 {
     Q_OBJECT
@@ -14,6 +15,7 @@ public:
     QTimer *connecttimer;
     QString ip;
     int port;
+
 
 signals:
 

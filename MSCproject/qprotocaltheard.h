@@ -9,7 +9,7 @@
 #include <QMap>
 #include <QString>
 #include <QTime>
-
+#include <QTextCodec>
 #define kor(str) QString::fromLocal8Bit(str)
 
 class qprotocaltheard : public QThread
@@ -21,6 +21,7 @@ public:
     QMap<QString,Qrichdata> *richdata;
     QTime time;
     bool runflag;
+    QTextCodec *codec;
 private:
     void run();
 

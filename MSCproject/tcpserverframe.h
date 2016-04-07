@@ -9,6 +9,7 @@
 #include <qserversocket.h>
 #include <QSettings>
 #include <QVector>
+#include <qconnection.h>
 class Tcpserverframe : public QWidget
 {
     Q_OBJECT
@@ -19,15 +20,24 @@ public:
     QLabel *QLsetport;
     QLineEdit *QEsetport;
     QPushButton *QServerstart;
+    QLabel *joincount;
+    QLabel *joincount_data;
+
+
+    QPushButton *Qremotestart;
+    QPushButton *Qremotestop;
 
     QGridLayout *mgridlayout;
     QServersocket *serversocket = NULL;
     QVector<QByteArray> *protocollist;
+    QVector<Qconnection *> *socketllist;
 
 signals:
 
 public slots:
     void serverstart();
+    void remotestart();
+    void remotestop();
     void QEsetport_change(QString str);
 };
 

@@ -21,7 +21,7 @@ class webwiget : public QWebView
 {
     Q_OBJECT
 public:
-    explicit webwiget(QTcsocket *tcsocket);
+    explicit webwiget(QTcsocket *tcsocket, QVector<webwiget *> *vecweb);
     QWebFrame *qwf;
     QWebElement document;
     QString findstr1;
@@ -36,6 +36,8 @@ public:
     int tempsitecount;
     bool vipcheck;
     QTcsocket *tcsocket;
+    bool paly_flag;
+    QVector<webwiget *> *vecweb;
 
 signals:
 
@@ -43,6 +45,7 @@ public slots:
     void autostep();
     void finishedpage(bool flag);
     void sitemoniter();
+    void read_data();
 };
 
 #endif // WEBWIGET_H

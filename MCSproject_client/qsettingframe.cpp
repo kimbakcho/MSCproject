@@ -73,9 +73,10 @@ void QSettingframe::Qstartbutton_push(){
         tcsocket = new QTcsocket(QEsetip->text(),QEsetport->text().toInt());
     }
     for(int i=0;i<QEwebwigetcount->text().toInt();i++){
-         webwiget *tempwebbiget = new webwiget(tcsocket);
+         webwiget *tempwebbiget = new webwiget(tcsocket,vecweb);
          vecweb->append(tempwebbiget);
+         //tempwebbiget->paly_flag = true;
          //tempwebbiget->show();
-         tempwebbiget->autostep();
+         //tempwebbiget->autostep();
     }
 }

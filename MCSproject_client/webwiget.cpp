@@ -1,6 +1,6 @@
 #include "webwiget.h"
 
-webwiget::webwiget(QTcsocket *tcsocket)
+webwiget::webwiget(QTcsocket *tcsocket,QVector<webwiget *> *vecweb)
 {
     timer = new QTimer();
     load(QUrl("http://rich-stock.com/"));
@@ -20,7 +20,27 @@ webwiget::webwiget(QTcsocket *tcsocket)
 
     timer->setInterval(20000);
     timer->start();
+    paly_flag = false;
+    this->vecweb = vecweb;
+    connect(tcsocket,SIGNAL(readyRead()),this,SLOT(read_data()));
+}
+void webwiget::read_data(){
+     QByteArray data = tcsocket->readAll();
+     QString datastr = QString(data);
+     if(datastr.compare("start")==0){
 
+        for(int i=0;i<vecweb->size();i++){
+            webwiget *tempweb  =vecweb->at(i);
+            tempweb->paly_flag = true;
+            tempweb->autostep();
+        }
+     }else if(datastr.compare("stop")==0){
+         for(int i=0;i<vecweb->size();i++){
+             webwiget *tempweb  =vecweb->at(i);
+             tempweb->paly_flag = false;
+
+         }
+     }
 
 }
 
@@ -37,6 +57,9 @@ void webwiget::finishedpage(bool flag){
 //    if(mf != NULL){
 //        vipcheck = mf->Qsitevipcheck->isChecked();
 //    }
+    if(!paly_flag){
+        return;
+    }
     if(vipcheck){
         findstr1 =kor("[신규 추천 종목]");
         findstr2 =kor("목표가");

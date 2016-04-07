@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     QSettingframe setframe(tcsocket,vecweb);
 
     setframe.show();
+    setframe.Qstartbutton_push();
 
 
 
