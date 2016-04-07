@@ -139,9 +139,10 @@ void webwiget::finishedpage(bool flag){
 
                             QString senddata = kor("free,hname,%1,price,%2,loos,%3,1ob,%4,timeh,%5,timem,%6")
                                                           .arg(hname_temp).arg(Cpricetemp).arg(Closspricetemp).arg(Cobjpricetemp).arg(reply_timeh).arg(reply_timem);
+                            QByteArray senddata_byte = senddata.toLocal8Bit();
                             QByteArray result_send_data;
                             result_send_data.append(0xAA);
-                            result_send_data.append(senddata);
+                            result_send_data.append(senddata_byte);
                             result_send_data.append(0xAB);
                             tcsocket->write(result_send_data);
                             tcsocket->flush();

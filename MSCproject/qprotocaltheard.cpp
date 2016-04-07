@@ -11,7 +11,12 @@ void qprotocaltheard::run(){
     while(runflag){
         while(!protocollist->isEmpty()){
             QByteArray data = protocollist->takeFirst();
-            qDebug()<<kor(data);
+            time = QTime::currentTime();
+            QString timestr = time.toString("hh:mm:ss");
+            qDebug()<<kor(data)<<timestr;
+
+
+
         }
     }
 }

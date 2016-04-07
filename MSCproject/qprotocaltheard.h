@@ -8,6 +8,7 @@
 #include <qrichdata.h>
 #include <QMap>
 #include <QString>
+#include <QTime>
 
 #define kor(str) QString::fromLocal8Bit(str)
 
@@ -18,6 +19,7 @@ public:
     explicit qprotocaltheard(QVector<QByteArray> *protocollist,QMap<QString,Qrichdata> *richdata);
     QVector<QByteArray> *protocollist;
     QMap<QString,Qrichdata> *richdata;
+    QTime time;
     bool runflag;
 private:
     void run();
