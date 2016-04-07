@@ -210,6 +210,7 @@ Makefile: ..\MSCproject\MSCproject.pro C:\Qt\5.5\msvc2012\mkspecs\win32-msvc2012
 		C:/Qt/5.5/msvc2012/lib/qtmaind.prl \
 		C:/Qt/5.5/msvc2012/lib/Qt5Widgets.prl \
 		C:/Qt/5.5/msvc2012/lib/Qt5Gui.prl \
+		C:/Qt/5.5/msvc2012/lib/Qt5Network.prl \
 		C:/Qt/5.5/msvc2012/lib/Qt5Core.prl
 	$(QMAKE) -spec win32-msvc2012 "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile ..\MSCproject\MSCproject.pro
 C:\Qt\5.5\msvc2012\mkspecs\features\spec_pre.prf:
@@ -349,6 +350,7 @@ C:\Qt\5.5\msvc2012\mkspecs\features\lex.prf:
 C:/Qt/5.5/msvc2012/lib/qtmaind.prl:
 C:/Qt/5.5/msvc2012/lib/Qt5Widgets.prl:
 C:/Qt/5.5/msvc2012/lib/Qt5Gui.prl:
+C:/Qt/5.5/msvc2012/lib/Qt5Network.prl:
 C:/Qt/5.5/msvc2012/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -spec win32-msvc2012 "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile ..\MSCproject\MSCproject.pro

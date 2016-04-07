@@ -13,7 +13,7 @@ public:
     QByteArray readbuffer;
     QByteArray protocoldata;
     QVector<QByteArray> *protocollist;
-    bool debug = false;
+    bool debug;
 
 signals:
 

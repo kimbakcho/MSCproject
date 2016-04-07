@@ -1,13 +1,16 @@
 #include "xing.h"
 
 
-xing::xing(QWidget *parent) : QWidget(parent)
+xing::xing(QMap<QString,Qrichdata *> *richdata,Tcpserverframe *tmf,QWidget *parent) : QWidget(parent)
 {
     htsip = "hts.ebestsec.co.kr";
     demoip = "demo.ebestsec.co.kr";
     serverport = 20001;
     buy_flag = true;
     hight_value1833_flag = true;
+    this->richdata =richdata;
+    this->tmf=tmf;
+
 }
 bool xing::init()
 {
@@ -540,8 +543,21 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
        QString hname = QString::fromLocal8Bit(pOutBlock->hname,20);
        QString shcode = QString::fromLocal8Bit(pOutBlock->shcode,6);
        QString price = QString::fromLocal8Bit(pOutBlock->price,8);
-
-
+       Qrichdata *data_temp1;
+       int price_int = price.toInt();
+       int loss_int;
+       int obj_int;
+       int testvalue;
+       testvalue = richdata->size();
+       data_temp1= richdata->value(shcode);
+       loss_int = data_temp1->loss.toInt();
+       obj_int = data_temp1->obj.toInt();
+       if(loss_int>=price_int){
+           data_temp1->loss_flag=true;
+       }
+       if(obj_int<=price_int){
+           data_temp1->obj_flag=true;
+       }
 
 }
 
@@ -607,10 +623,64 @@ void xing::func_t0424OutBlock1(LPRECV_PACKET pRpData){
            hname.replace(" ","");
            int mdposqt_int = mdposqt.toInt();
 
+           if(richdata->contains(expcode)&&(mdposqt_int>0)){
+               QByteArray qb_temp[10];
+               CSPAT00600data data;
+               QString tpcode = "1";
+               QString prcptncode = "00";
+               QString mgntrncode = "000";
+               QString loandt ="";
+               QString ordcnditpcode = "0";
+               Qrichdata *tempvalue;
 
-           //qDebug()<<QString("func_t0424OutBlock1 expcode = %1 hname = %2").arg(expcode).arg(hname);
+               tempvalue = richdata->value(expcode);
 
+               qb_temp[0] = tempvalue->shcode.toLocal8Bit();
+               data.strIsuNo = qb_temp[0].data();
 
+               qb_temp[1] = tmf->QEjpwumber->text().toLocal8Bit();
+               data.strInptPwd = qb_temp[1].data();
+
+               qb_temp[2] = tmf->QEjaccnumber->text().toLocal8Bit();
+               data.strAcntNo = qb_temp[2].data();
+               //price qty
+               qb_temp[3] = mdposqt.toLocal8Bit();
+               data.strOrdQty = qb_temp[3].data();
+               //price
+               qb_temp[4] = tempvalue->obj.toLocal8Bit();
+               data.strOrdPrc = qb_temp[4].data();
+               //BnsTpCode
+               qb_temp[5] = tpcode.toLocal8Bit();
+               data.strBnsTpCode = qb_temp[5].data();
+               //OrdprcPtnCode
+              qb_temp[6] = prcptncode.toLocal8Bit();
+              data.strOrdprcPtnCode = qb_temp[6].data();
+              //MgntrnCode
+              qb_temp[7] = mgntrncode.toLocal8Bit();
+              data.strMgntrnCode = qb_temp[7].data();
+              //LoanDt
+              qb_temp[8] = loandt.toLocal8Bit();
+              data.strLoanDt = qb_temp[8].data();
+              //OrdCndiTpCode
+              qb_temp[9] = ordcnditpcode.toLocal8Bit();
+              data.strOrdCndiTpCode = qb_temp[9].data();
+
+              if(!tempvalue->loss_flag){
+                  int result_3 = CSPAT00600_Request(true,data);
+                   qDebug()<<QString("func_t0424OutBlock1 to CSPAT00600_Request expcode = %1 hname = %2").arg(expcode).arg(hname);
+              }else if (tempvalue->loss_flag){
+                  //손절
+                 //price
+                 qb_temp[4] = tempvalue->loss.toLocal8Bit();
+                 data.strOrdPrc = qb_temp[4].data();
+                 //시장가 매도
+                 prcptncode = "03";
+                  //OrdprcPtnCode
+                 qb_temp[6] = prcptncode.toLocal8Bit();
+                 data.strOrdprcPtnCode = qb_temp[6].data();
+                 int result_3 = CSPAT00600_Request(true,data);
+              }
+           }
        }
 }
 void xing::func_t0425OutBlock1(LPRECV_PACKET pRpData){
@@ -636,7 +706,57 @@ void xing::func_t0425OutBlock1(LPRECV_PACKET pRpData){
         expcode.replace(" ","");
         orgordno.replace(" ","");
         ordrem.replace(" ","");
+        if(richdata->contains(expcode)){
+            Qrichdata *tempvalue;
+            tempvalue = richdata->value(expcode);
+            QString hname = tempvalue->hname;
+            if(tempvalue->loss_flag && (hogagb.compare("03")!=0)){
+                //매도 취소 주문
+                QByteArray qb_temp_loss[10];
+                CSPAT00800InBlock1data data_loss;
 
+                qb_temp_loss[0] = ordno.toLocal8Bit();
+                data_loss.OrgOrdNo = qb_temp_loss[0].data();
+
+                qb_temp_loss[1] = tmf->QEjaccnumber->text().toLocal8Bit();
+                data_loss.AcntNo = qb_temp_loss[1].data();
+
+                qb_temp_loss[2] = tmf->QEjpwumber->text().toLocal8Bit();
+                data_loss.InptPwd = qb_temp_loss[2].data();
+
+                qb_temp_loss[3] = expcode.toLocal8Bit();
+                data_loss.IsuNo = qb_temp_loss[3].data();
+
+                qb_temp_loss[4] = ordrem.toLocal8Bit();
+                data_loss.OrdQty = qb_temp_loss[4].data();
+
+
+                CSPAT00800_Request(true,data_loss);
+            }
+            if(tempvalue->obj_flag){
+                //매수 취소 주문
+                QByteArray qb_temp_obj[10];
+                CSPAT00800InBlock1data data_obj;
+
+                qb_temp_obj[0] = ordno.toLocal8Bit();
+                data_obj.OrgOrdNo = qb_temp_obj[0].data();
+
+                qb_temp_obj[1] = tmf->QEjaccnumber->text().toLocal8Bit();
+                data_obj.AcntNo = qb_temp_obj[1].data();
+
+                qb_temp_obj[2] = tmf->QEjpwumber->text().toLocal8Bit();
+                data_obj.AcntNo = qb_temp_obj[2].data();
+
+                qb_temp_obj[3] = expcode.toLocal8Bit();
+                data_obj.IsuNo = qb_temp_obj[3].data();
+
+                qb_temp_obj[4] = ordrem.toLocal8Bit();
+                data_obj.OrdQty = qb_temp_obj[4].data();
+
+                CSPAT00800_Request(true,data_obj);
+            }
+
+        }
     }
 }
 

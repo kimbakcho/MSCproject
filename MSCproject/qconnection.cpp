@@ -3,6 +3,7 @@
 Qconnection::Qconnection(QVector<QByteArray> *protocollist)
 {
     this->protocollist = protocollist;
+    debug = false;
     connect(this,SIGNAL(readyRead()),this,SLOT(readyforready()));
 }
 void Qconnection::readyforready(){

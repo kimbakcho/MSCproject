@@ -22,13 +22,21 @@ public:
     QPushButton *QServerstart;
     QLabel *joincount;
     QLabel *joincount_data;
+    QLabel *QLaccnumber;
+    QLineEdit *QEjaccnumber;
+
+    QLabel *QLpwumber;
+    QLineEdit *QEjpwumber;
+
+    QLabel *QLmoneyprice;
+    QLineEdit *QEjQLmoneyprice;
 
 
     QPushButton *Qremotestart;
     QPushButton *Qremotestop;
 
     QGridLayout *mgridlayout;
-    QServersocket *serversocket = NULL;
+    QServersocket *serversocket;
     QVector<QByteArray> *protocollist;
     QVector<Qconnection *> *socketllist;
 
@@ -39,6 +47,9 @@ public slots:
     void remotestart();
     void remotestop();
     void QEsetport_change(QString str);
+    void QEjaccnumber_change(QString str);
+    void QEjpwumber_change(QString str);
+    void QEjQLmoneyprice_change(QString str);
 };
 
 #endif // TCPSERVERFRAME_H

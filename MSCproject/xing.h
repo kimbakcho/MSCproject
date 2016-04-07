@@ -16,6 +16,8 @@
 #include "./packet/t0425.h"
 #include <QVector>
 #include <QMap>
+#include <qrichdata.h>
+#include <tcpserverframe.h>
 #define kor(str) QString::fromLocal8Bit(str)
 //------------------------------------------------------------------------------
 // 메시지 정의
@@ -145,13 +147,15 @@ class xing : public QWidget
 {
     Q_OBJECT
 public:
-    explicit xing(QWidget *parent = 0);
+    explicit xing(QMap<QString,Qrichdata *> *richdata,Tcpserverframe *tmf,QWidget *parent = 0);
     bool init();
     void set_windid(HWND data);
     HWND get_windid();
     QString htsip;
     QString demoip;
     int serverport;
+    QMap<QString,Qrichdata *> *richdata;
+    Tcpserverframe *tmf;
 
     bool buy_flag;
 

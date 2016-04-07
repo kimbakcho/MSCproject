@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     qserversocket.cpp \
     qconnection.cpp \
     qprotocaltheard.cpp \
-    qrichdata.cpp
+    qrichdata.cpp \
+    tjango_th.cpp \
+    tpricemoniter.cpp
 
 HEADERS  += widget.h \
     xing.h \
@@ -200,4 +202,6 @@ HEADERS  += widget.h \
     qserversocket.h \
     qconnection.h \
     qprotocaltheard.h \
-    qrichdata.h
+    qrichdata.h \
+    tjango_th.h \
+    tpricemoniter.h

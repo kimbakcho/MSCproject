@@ -11,13 +11,13 @@ MAKEFILE      = Makefile.Release
 
 CC            = cl
 CXX           = cl
-DEFINES       = -DUNICODE -DWIN32 -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG
+DEFINES       = -DUNICODE -DWIN32 -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DNDEBUG
 CFLAGS        = -nologo -Zc:wchar_t -O2 -MD -W3 $(DEFINES)
 CXXFLAGS      = -nologo -Zc:wchar_t -O2 -MD -GR -W3 -w34100 -w34189 -w44996 -EHsc $(DEFINES)
-INCPATH       = -I..\MSCproject -I. -IC:\Qt\5.5\msvc2012\include -IC:\Qt\5.5\msvc2012\include\QtWidgets -IC:\Qt\5.5\msvc2012\include\QtGui -IC:\Qt\5.5\msvc2012\include\QtANGLE -IC:\Qt\5.5\msvc2012\include\QtCore -Irelease -IC:\Qt\5.5\msvc2012\mkspecs\win32-msvc2012 
+INCPATH       = -I..\MSCproject -I. -IC:\Qt\5.5\msvc2012\include -IC:\Qt\5.5\msvc2012\include\QtWidgets -IC:\Qt\5.5\msvc2012\include\QtGui -IC:\Qt\5.5\msvc2012\include\QtANGLE -IC:\Qt\5.5\msvc2012\include\QtNetwork -IC:\Qt\5.5\msvc2012\include\QtCore -Irelease -IC:\Qt\5.5\msvc2012\mkspecs\win32-msvc2012 
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = /LIBPATH:C:\Qt\5.5\msvc2012\lib C:\Qt\5.5\msvc2012\lib\qtmain.lib shell32.lib /LIBPATH:C:\Qt\5.5\msvc2012\lib C:\Qt\5.5\msvc2012\lib\Qt5Core.lib C:\Qt\5.5\msvc2012\lib\Qt5Widgets.lib C:\Qt\5.5\msvc2012\lib\Qt5Gui.lib C:\Qt\5.5\msvc2012\lib\Qt5Core.lib 
+LIBS          = /LIBPATH:C:\Qt\5.5\msvc2012\lib C:\Qt\5.5\msvc2012\lib\qtmain.lib shell32.lib /LIBPATH:C:\Qt\5.5\msvc2012\lib C:\Qt\5.5\msvc2012\lib\Qt5Core.lib C:\Qt\5.5\msvc2012\lib\Qt5Widgets.lib C:\Qt\5.5\msvc2012\lib\Qt5Gui.lib C:\Qt\5.5\msvc2012\lib\Qt5Network.lib C:\Qt\5.5\msvc2012\lib\Qt5Core.lib 
 QMAKE         = C:\Qt\5.5\msvc2012\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -47,19 +47,45 @@ SOURCES       = ..\MSCproject\main.cpp \
 		..\MSCproject\widget.cpp \
 		..\MSCproject\xing.cpp \
 		..\MSCproject\loginwiget.cpp \
-		..\MSCproject\tcpserverframe.cpp release\moc_widget.cpp \
+		..\MSCproject\tcpserverframe.cpp \
+		..\MSCproject\servertheard.cpp \
+		..\MSCproject\qserversocket.cpp \
+		..\MSCproject\qconnection.cpp \
+		..\MSCproject\qprotocaltheard.cpp \
+		..\MSCproject\qrichdata.cpp \
+		..\MSCproject\tjango_th.cpp \
+		..\MSCproject\tpricemoniter.cpp release\moc_widget.cpp \
 		release\moc_xing.cpp \
 		release\moc_loginwiget.cpp \
-		release\moc_tcpserverframe.cpp
+		release\moc_tcpserverframe.cpp \
+		release\moc_servertheard.cpp \
+		release\moc_qserversocket.cpp \
+		release\moc_qconnection.cpp \
+		release\moc_qprotocaltheard.cpp \
+		release\moc_tjango_th.cpp \
+		release\moc_tpricemoniter.cpp
 OBJECTS       = release\main.obj \
 		release\widget.obj \
 		release\xing.obj \
 		release\loginwiget.obj \
 		release\tcpserverframe.obj \
+		release\servertheard.obj \
+		release\qserversocket.obj \
+		release\qconnection.obj \
+		release\qprotocaltheard.obj \
+		release\qrichdata.obj \
+		release\tjango_th.obj \
+		release\tpricemoniter.obj \
 		release\moc_widget.obj \
 		release\moc_xing.obj \
 		release\moc_loginwiget.obj \
-		release\moc_tcpserverframe.obj
+		release\moc_tcpserverframe.obj \
+		release\moc_servertheard.obj \
+		release\moc_qserversocket.obj \
+		release\moc_qconnection.obj \
+		release\moc_qprotocaltheard.obj \
+		release\moc_tjango_th.obj \
+		release\moc_tpricemoniter.obj
 
 DIST          =  ..\MSCproject\widget.h \
 		..\MSCproject\xing.h \
@@ -233,11 +259,25 @@ DIST          =  ..\MSCproject\widget.h \
 		..\MSCproject\packet\YOC.h \
 		..\MSCproject\packet\YS3.h \
 		..\MSCproject\loginwiget.h \
-		..\MSCproject\tcpserverframe.h ..\MSCproject\main.cpp \
+		..\MSCproject\tcpserverframe.h \
+		..\MSCproject\servertheard.h \
+		..\MSCproject\qserversocket.h \
+		..\MSCproject\qconnection.h \
+		..\MSCproject\qprotocaltheard.h \
+		..\MSCproject\qrichdata.h \
+		..\MSCproject\tjango_th.h \
+		..\MSCproject\tpricemoniter.h ..\MSCproject\main.cpp \
 		..\MSCproject\widget.cpp \
 		..\MSCproject\xing.cpp \
 		..\MSCproject\loginwiget.cpp \
-		..\MSCproject\tcpserverframe.cpp
+		..\MSCproject\tcpserverframe.cpp \
+		..\MSCproject\servertheard.cpp \
+		..\MSCproject\qserversocket.cpp \
+		..\MSCproject\qconnection.cpp \
+		..\MSCproject\qprotocaltheard.cpp \
+		..\MSCproject\qrichdata.cpp \
+		..\MSCproject\tjango_th.cpp \
+		..\MSCproject\tpricemoniter.cpp
 QMAKE_TARGET  = MSCproject
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = MSCproject.exe
@@ -324,10 +364,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) MSCproject.zip $(SOURCES) $(DIST) ..\MSCproject\MSCproject.pro C:\Qt\5.5\msvc2012\mkspecs\features\spec_pre.prf C:\Qt\5.5\msvc2012\mkspecs\common\msvc-desktop.conf C:\Qt\5.5\msvc2012\mkspecs\qconfig.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcollision.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcollision_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquickrenderer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquickrenderer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3drenderer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3drenderer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_core.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_declarative.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_declarative_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_enginio.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_enginio_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_help.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_location.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_network.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_script.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkit.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkit_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkitwidgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkitwidgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.5\msvc2012\mkspecs\features\qt_functions.prf C:\Qt\5.5\msvc2012\mkspecs\features\qt_config.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\qt_config.prf C:\Qt\5.5\msvc2012\mkspecs\win32-msvc2012\qmake.conf C:\Qt\5.5\msvc2012\mkspecs\features\spec_post.prf C:\Qt\5.5\msvc2012\mkspecs\features\exclusive_builds.prf C:\Qt\5.5\msvc2012\mkspecs\features\default_pre.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\default_pre.prf C:\Qt\5.5\msvc2012\mkspecs\features\resolve_config.prf C:\Qt\5.5\msvc2012\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.5\msvc2012\mkspecs\features\default_post.prf C:\Qt\5.5\msvc2012\mkspecs\features\build_pass.prf C:\Qt\5.5\msvc2012\mkspecs\features\qml_debug.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\rtti.prf C:\Qt\5.5\msvc2012\mkspecs\features\c++11.prf C:\Qt\5.5\msvc2012\mkspecs\features\precompile_header.prf C:\Qt\5.5\msvc2012\mkspecs\features\warn_on.prf C:\Qt\5.5\msvc2012\mkspecs\features\qt.prf C:\Qt\5.5\msvc2012\mkspecs\features\resources.prf C:\Qt\5.5\msvc2012\mkspecs\features\moc.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\opengl.prf C:\Qt\5.5\msvc2012\mkspecs\features\uic.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\windows.prf C:\Qt\5.5\msvc2012\mkspecs\features\testcase_targets.prf C:\Qt\5.5\msvc2012\mkspecs\features\exceptions.prf C:\Qt\5.5\msvc2012\mkspecs\features\yacc.prf C:\Qt\5.5\msvc2012\mkspecs\features\lex.prf ..\MSCproject\MSCproject.pro C:/Qt/5.5/msvc2012/lib/qtmain.prl C:/Qt/5.5/msvc2012/lib/Qt5Widgets.prl C:/Qt/5.5/msvc2012/lib/Qt5Gui.prl C:/Qt/5.5/msvc2012/lib/Qt5Core.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
+	$(ZIP) MSCproject.zip $(SOURCES) $(DIST) ..\MSCproject\MSCproject.pro C:\Qt\5.5\msvc2012\mkspecs\features\spec_pre.prf C:\Qt\5.5\msvc2012\mkspecs\common\msvc-desktop.conf C:\Qt\5.5\msvc2012\mkspecs\qconfig.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcollision.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcollision_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquickrenderer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquickrenderer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3drenderer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3drenderer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_core.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_declarative.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_declarative_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_enginio.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_enginio_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_help.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_location.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_network.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_script.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkit.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkit_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkitwidgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkitwidgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.5\msvc2012\mkspecs\features\qt_functions.prf C:\Qt\5.5\msvc2012\mkspecs\features\qt_config.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\qt_config.prf C:\Qt\5.5\msvc2012\mkspecs\win32-msvc2012\qmake.conf C:\Qt\5.5\msvc2012\mkspecs\features\spec_post.prf C:\Qt\5.5\msvc2012\mkspecs\features\exclusive_builds.prf C:\Qt\5.5\msvc2012\mkspecs\features\default_pre.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\default_pre.prf C:\Qt\5.5\msvc2012\mkspecs\features\resolve_config.prf C:\Qt\5.5\msvc2012\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.5\msvc2012\mkspecs\features\default_post.prf C:\Qt\5.5\msvc2012\mkspecs\features\build_pass.prf C:\Qt\5.5\msvc2012\mkspecs\features\qml_debug.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\rtti.prf C:\Qt\5.5\msvc2012\mkspecs\features\c++11.prf C:\Qt\5.5\msvc2012\mkspecs\features\precompile_header.prf C:\Qt\5.5\msvc2012\mkspecs\features\warn_on.prf C:\Qt\5.5\msvc2012\mkspecs\features\qt.prf C:\Qt\5.5\msvc2012\mkspecs\features\resources.prf C:\Qt\5.5\msvc2012\mkspecs\features\moc.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\opengl.prf C:\Qt\5.5\msvc2012\mkspecs\features\uic.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\windows.prf C:\Qt\5.5\msvc2012\mkspecs\features\testcase_targets.prf C:\Qt\5.5\msvc2012\mkspecs\features\exceptions.prf C:\Qt\5.5\msvc2012\mkspecs\features\yacc.prf C:\Qt\5.5\msvc2012\mkspecs\features\lex.prf ..\MSCproject\MSCproject.pro C:/Qt/5.5/msvc2012/lib/qtmain.prl C:/Qt/5.5/msvc2012/lib/Qt5Widgets.prl C:/Qt/5.5/msvc2012/lib/Qt5Gui.prl C:/Qt/5.5/msvc2012/lib/Qt5Network.prl C:/Qt/5.5/msvc2012/lib/Qt5Core.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.obj release\widget.obj release\xing.obj release\loginwiget.obj release\tcpserverframe.obj release\moc_widget.obj release\moc_xing.obj release\moc_loginwiget.obj release\moc_tcpserverframe.obj
+	-$(DEL_FILE) release\main.obj release\widget.obj release\xing.obj release\loginwiget.obj release\tcpserverframe.obj release\servertheard.obj release\qserversocket.obj release\qconnection.obj release\qprotocaltheard.obj release\qrichdata.obj release\tjango_th.obj release\tpricemoniter.obj release\moc_widget.obj release\moc_xing.obj release\moc_loginwiget.obj release\moc_tcpserverframe.obj release\moc_servertheard.obj release\moc_qserversocket.obj release\moc_qconnection.obj release\moc_qprotocaltheard.obj release\moc_tjango_th.obj release\moc_tpricemoniter.obj
 	-$(DEL_FILE) release\MSCproject.exp release\MSCproject.exe.embed.manifest
 
 distclean: clean 
@@ -345,9 +385,9 @@ compiler_no_pch_compiler_make_all:
 compiler_no_pch_compiler_clean:
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: release\moc_widget.cpp release\moc_xing.cpp release\moc_loginwiget.cpp release\moc_tcpserverframe.cpp
+compiler_moc_header_make_all: release\moc_widget.cpp release\moc_xing.cpp release\moc_loginwiget.cpp release\moc_tcpserverframe.cpp release\moc_servertheard.cpp release\moc_qserversocket.cpp release\moc_qconnection.cpp release\moc_qprotocaltheard.cpp release\moc_tjango_th.cpp release\moc_tpricemoniter.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_widget.cpp release\moc_xing.cpp release\moc_loginwiget.cpp release\moc_tcpserverframe.cpp
+	-$(DEL_FILE) release\moc_widget.cpp release\moc_xing.cpp release\moc_loginwiget.cpp release\moc_tcpserverframe.cpp release\moc_servertheard.cpp release\moc_qserversocket.cpp release\moc_qconnection.cpp release\moc_qprotocaltheard.cpp release\moc_tjango_th.cpp release\moc_tpricemoniter.cpp
 release\moc_widget.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs.h \
@@ -451,7 +491,7 @@ release\moc_widget.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		..\MSCproject\widget.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\widget.h -o release\moc_widget.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\widget.h -o release\moc_widget.cpp
 
 release\moc_xing.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
@@ -570,8 +610,40 @@ release\moc_xing.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		..\MSCproject\packet\t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
+		..\MSCproject\qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
+		..\MSCproject\tcpserverframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGridLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		..\MSCproject\qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		..\MSCproject\qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
 		..\MSCproject\xing.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\xing.h -o release\moc_xing.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\xing.h -o release\moc_xing.cpp
 
 release\moc_loginwiget.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
@@ -713,9 +785,20 @@ release\moc_loginwiget.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		..\MSCproject\packet\t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
+		..\MSCproject\qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
 		..\MSCproject\tcpserverframe.h \
+		..\MSCproject\qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		..\MSCproject\qconnection.h \
 		..\MSCproject\loginwiget.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\loginwiget.h -o release\moc_loginwiget.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\loginwiget.h -o release\moc_loginwiget.cpp
 
 release\moc_tcpserverframe.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
@@ -819,8 +902,753 @@ release\moc_tcpserverframe.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGridLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		..\MSCproject\qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		..\MSCproject\qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
 		..\MSCproject\tcpserverframe.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\tcpserverframe.h -o release\moc_tcpserverframe.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\tcpserverframe.h -o release\moc_tcpserverframe.cpp
+
+release\moc_servertheard.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QThread \
+		C:\Qt\5.5\msvc2012\include\QtCore\qthread.h \
+		..\MSCproject\servertheard.h
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\servertheard.h -o release\moc_servertheard.cpp
+
+release\moc_qserversocket.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		..\MSCproject\qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
+		..\MSCproject\qserversocket.h
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\qserversocket.h -o release\moc_qserversocket.cpp
+
+release\moc_qconnection.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		..\MSCproject\qconnection.h
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\qconnection.h -o release\moc_qconnection.cpp
+
+release\moc_qprotocaltheard.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QThread \
+		C:\Qt\5.5\msvc2012\include\QtCore\qthread.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QDebug \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
+		..\MSCproject\qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
+		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTextCodec \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextcodec.h \
+		..\MSCproject\xing.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QLibrary \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlibrary.h \
+		..\MSCproject\Packet\t1452.h \
+		..\MSCproject\Packet\t0424.h \
+		..\MSCproject\Packet\t1101.h \
+		..\MSCproject\packet\CSPAT00600.h \
+		..\MSCproject\packet\cspaq13700.h \
+		..\MSCproject\packet\cspaq12300.h \
+		..\MSCproject\packet\CSPAT00800.h \
+		..\MSCproject\packet\t0425.h \
+		..\MSCproject\tcpserverframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGridLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		..\MSCproject\qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		..\MSCproject\qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		..\MSCproject\qprotocaltheard.h
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\qprotocaltheard.h -o release\moc_qprotocaltheard.cpp
+
+release\moc_tjango_th.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QThread \
+		C:\Qt\5.5\msvc2012\include\QtCore\qthread.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QDebug \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
+		..\MSCproject\xing.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QLibrary \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlibrary.h \
+		..\MSCproject\Packet\t1452.h \
+		..\MSCproject\Packet\t0424.h \
+		..\MSCproject\Packet\t1101.h \
+		..\MSCproject\packet\CSPAT00600.h \
+		..\MSCproject\packet\cspaq13700.h \
+		..\MSCproject\packet\cspaq12300.h \
+		..\MSCproject\packet\CSPAT00800.h \
+		..\MSCproject\packet\t0425.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
+		..\MSCproject\qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
+		..\MSCproject\tcpserverframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGridLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		..\MSCproject\qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		..\MSCproject\qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		..\MSCproject\tjango_th.h
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\tjango_th.h -o release\moc_tjango_th.cpp
+
+release\moc_tpricemoniter.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QThread \
+		C:\Qt\5.5\msvc2012\include\QtCore\qthread.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QList \
+		C:\Qt\5.5\msvc2012\include\QtCore\QDebug \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
+		..\MSCproject\qrichdata.h \
+		..\MSCproject\xing.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QLibrary \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlibrary.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
+		..\MSCproject\Packet\t1452.h \
+		..\MSCproject\Packet\t0424.h \
+		..\MSCproject\Packet\t1101.h \
+		..\MSCproject\packet\CSPAT00600.h \
+		..\MSCproject\packet\cspaq13700.h \
+		..\MSCproject\packet\cspaq12300.h \
+		..\MSCproject\packet\CSPAT00800.h \
+		..\MSCproject\packet\t0425.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
+		..\MSCproject\tcpserverframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGridLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		..\MSCproject\qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		..\MSCproject\qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		..\MSCproject\tpricemoniter.h
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\tpricemoniter.h -o release\moc_tpricemoniter.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -980,14 +1808,34 @@ release\main.obj: ..\MSCproject\main.cpp ../MSCproject/widget.h \
 		../MSCproject/packet/t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
+		../MSCproject/qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
 		../MSCproject/tcpserverframe.h \
+		../MSCproject/qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		../MSCproject/qconnection.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QApplication \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qapplication.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qeventloop.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdesktopwidget.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qguiapplication.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qinputmethod.h
+		C:\Qt\5.5\msvc2012\include\QtGui\qinputmethod.h \
+		../MSCproject/qprotocaltheard.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QThread \
+		C:\Qt\5.5\msvc2012\include\QtCore\qthread.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTextCodec \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextcodec.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QFile \
+		../MSCproject/tjango_th.h \
+		../MSCproject/tpricemoniter.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QList
 
 release\widget.obj: ..\MSCproject\widget.cpp ../MSCproject/widget.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
@@ -1210,7 +2058,39 @@ release\xing.obj: ..\MSCproject\xing.cpp ../MSCproject/xing.h \
 		../MSCproject/packet/CSPAT00800.h \
 		../MSCproject/packet/t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
-		C:\Qt\5.5\msvc2012\include\QtCore\QMap
+		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
+		../MSCproject/qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
+		../MSCproject/tcpserverframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGridLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		../MSCproject/qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h
 
 release\loginwiget.obj: ..\MSCproject\loginwiget.cpp ../MSCproject/loginwiget.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
@@ -1353,7 +2233,18 @@ release\loginwiget.obj: ..\MSCproject\loginwiget.cpp ../MSCproject/loginwiget.h 
 		../MSCproject/packet/t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
-		../MSCproject/tcpserverframe.h
+		../MSCproject/qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
+		../MSCproject/tcpserverframe.h \
+		../MSCproject/qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		../MSCproject/qconnection.h
 
 release\tcpserverframe.obj: ..\MSCproject\tcpserverframe.cpp ../MSCproject/tcpserverframe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
@@ -1457,7 +2348,802 @@ release\tcpserverframe.obj: ..\MSCproject\tcpserverframe.cpp ../MSCproject/tcpse
 		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGridLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		../MSCproject/qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h
+
+release\servertheard.obj: ..\MSCproject\servertheard.cpp ../MSCproject/servertheard.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QThread \
+		C:\Qt\5.5\msvc2012\include\QtCore\qthread.h
+
+release\qserversocket.obj: ..\MSCproject\qserversocket.cpp ../MSCproject/qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h
+
+release\qconnection.obj: ..\MSCproject\qconnection.cpp ../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector
+
+release\qprotocaltheard.obj: ..\MSCproject\qprotocaltheard.cpp ../MSCproject/qprotocaltheard.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QThread \
+		C:\Qt\5.5\msvc2012\include\QtCore\qthread.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QDebug \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
+		../MSCproject/qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
+		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTextCodec \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextcodec.h \
+		../MSCproject/xing.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QLibrary \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlibrary.h \
+		..\MSCproject\Packet\t1452.h \
+		..\MSCproject\Packet\t0424.h \
+		..\MSCproject\Packet\t1101.h \
+		../MSCproject/packet/CSPAT00600.h \
+		../MSCproject/packet/cspaq13700.h \
+		../MSCproject/packet/cspaq12300.h \
+		../MSCproject/packet/CSPAT00800.h \
+		../MSCproject/packet/t0425.h \
+		../MSCproject/tcpserverframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGridLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		../MSCproject/qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h
+
+release\qrichdata.obj: ..\MSCproject\qrichdata.cpp ../MSCproject/qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString
+
+release\tjango_th.obj: ..\MSCproject\tjango_th.cpp ../MSCproject/tjango_th.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QThread \
+		C:\Qt\5.5\msvc2012\include\QtCore\qthread.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QDebug \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
+		../MSCproject/xing.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QLibrary \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlibrary.h \
+		..\MSCproject\Packet\t1452.h \
+		..\MSCproject\Packet\t0424.h \
+		..\MSCproject\Packet\t1101.h \
+		../MSCproject/packet/CSPAT00600.h \
+		../MSCproject/packet/cspaq13700.h \
+		../MSCproject/packet/cspaq12300.h \
+		../MSCproject/packet/CSPAT00800.h \
+		../MSCproject/packet/t0425.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
+		../MSCproject/qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
+		../MSCproject/tcpserverframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGridLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		../MSCproject/qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h
+
+release\tpricemoniter.obj: ..\MSCproject\tpricemoniter.cpp ../MSCproject/tpricemoniter.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QThread \
+		C:\Qt\5.5\msvc2012\include\QtCore\qthread.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QList \
+		C:\Qt\5.5\msvc2012\include\QtCore\QDebug \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
+		../MSCproject/qrichdata.h \
+		../MSCproject/xing.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QLibrary \
+		C:\Qt\5.5\msvc2012\include\QtCore\qlibrary.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
+		..\MSCproject\Packet\t1452.h \
+		..\MSCproject\Packet\t0424.h \
+		..\MSCproject\Packet\t1101.h \
+		../MSCproject/packet/CSPAT00600.h \
+		../MSCproject/packet/cspaq13700.h \
+		../MSCproject/packet/cspaq12300.h \
+		../MSCproject/packet/CSPAT00800.h \
+		../MSCproject/packet/t0425.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
+		../MSCproject/tcpserverframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGridLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		../MSCproject/qserversocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpServer \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpserver.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
+		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
+		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h
 
 release\moc_widget.obj: release\moc_widget.cpp 
 
@@ -1466,6 +3152,18 @@ release\moc_xing.obj: release\moc_xing.cpp
 release\moc_loginwiget.obj: release\moc_loginwiget.cpp 
 
 release\moc_tcpserverframe.obj: release\moc_tcpserverframe.cpp 
+
+release\moc_servertheard.obj: release\moc_servertheard.cpp 
+
+release\moc_qserversocket.obj: release\moc_qserversocket.cpp 
+
+release\moc_qconnection.obj: release\moc_qconnection.cpp 
+
+release\moc_qprotocaltheard.obj: release\moc_qprotocaltheard.cpp 
+
+release\moc_tjango_th.obj: release\moc_tjango_th.cpp 
+
+release\moc_tpricemoniter.obj: release\moc_tpricemoniter.cpp 
 
 ####### Install
 
