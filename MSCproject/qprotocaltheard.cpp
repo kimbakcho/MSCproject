@@ -53,12 +53,63 @@ void qprotocaltheard::run(){
                 loss_double = price_double_result-per3;
                 loss_result = (int)loss_double;
 
-                str_price_result = QString("%1").arg(price_reslut);
-                str_obj1_result = QString("%1").arg(obj1_result);
-                str_loss_result = QString("%1").arg(loss_result);
+                int price_reslut_1 = price_reslut;
+                if(price_reslut_1<5000){
+                    price_reslut_1 = price_reslut_1/5;
+                    price_reslut_1 = price_reslut_1*5;
+                }else if(price_reslut_1>=5000&&price_reslut_1<10000){
+                    price_reslut_1 = price_reslut_1/10;
+                    price_reslut_1 = price_reslut_1*10;
+                }else if(price_reslut_1>=10000&&price_reslut_1<50000){
+                    price_reslut_1 = price_reslut_1/50;
+                    price_reslut_1 = price_reslut_1*50;
+                }else if(price_reslut_1>=50000&&price_reslut_1<100000){
+                    price_reslut_1 = price_reslut_1/100;
+                    price_reslut_1 = price_reslut_1*100;
+                }
+
+                int obj_reslut_1 = obj1_result;
+                if(obj_reslut_1<5000){
+                    obj_reslut_1 = obj_reslut_1/5;
+                    obj_reslut_1 = obj_reslut_1*5;
+                }else if(obj_reslut_1>=5000&&obj_reslut_1<10000){
+                    obj_reslut_1 = obj_reslut_1/10;
+                    obj_reslut_1 = obj_reslut_1*10;
+                }else if(obj_reslut_1>=10000&&obj_reslut_1<50000){
+                    obj_reslut_1 = obj_reslut_1/50;
+                    obj_reslut_1 = obj_reslut_1*50;
+                }else if(obj_reslut_1>=50000&&obj_reslut_1<100000){
+                    obj_reslut_1 = obj_reslut_1/100;
+                    obj_reslut_1 = obj_reslut_1*100;
+                }
+
+                int loss_reslut_1 = loss_result;
+                if(loss_reslut_1<5000){
+                    loss_reslut_1 = loss_reslut_1/5;
+                    loss_reslut_1 = loss_reslut_1*5;
+                }else if(loss_reslut_1>=5000&&loss_reslut_1<10000){
+                    loss_reslut_1 = loss_reslut_1/10;
+                    loss_reslut_1 = loss_reslut_1*10;
+                }else if(loss_reslut_1>=10000&&loss_reslut_1<50000){
+                    loss_reslut_1 = loss_reslut_1/50;
+                    loss_reslut_1 = loss_reslut_1*50;
+                }else if(loss_reslut_1>=50000&&loss_reslut_1<100000){
+                    loss_reslut_1 = loss_reslut_1/100;
+                    loss_reslut_1 = loss_reslut_1*100;
+                }
+
+
+
+                str_price_result = QString("%1").arg(price_reslut_1);
+                str_obj1_result = QString("%1").arg(obj_reslut_1);
+                str_loss_result = QString("%1").arg(loss_reslut_1);
                 temp_rich->str_price_result = QString(str_price_result);
                 temp_rich->str_obj1_result = QString(str_obj1_result);
                 temp_rich->str_loss_result = QString(str_loss_result);
+
+
+
+
 
                 real_tranding = QString(" real_price=%1, real_obj1=%2, real_loss =%3")
                         .arg(temp_rich->str_price_result).arg(temp_rich->str_obj1_result).arg(temp_rich->str_loss_result);
