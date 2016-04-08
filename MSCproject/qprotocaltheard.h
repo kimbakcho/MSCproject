@@ -12,15 +12,16 @@
 #include <QTextCodec>
 #include <xing.h>
 #include <tcpserverframe.h>
+#include <QQueue>
 #define kor(str) QString::fromLocal8Bit(str)
 
 class qprotocaltheard : public QThread
 {
     Q_OBJECT
 public:
-    explicit qprotocaltheard(QVector<QByteArray> *protocollist, QMap<QString, Qrichdata *> *richdata
+    explicit qprotocaltheard(QQueue<QByteArray> *protocollist, QMap<QString, Qrichdata *> *richdata
                              , QMap<QString, QString> *shcodemap, xing *x1, Tcpserverframe *tmf);
-    QVector<QByteArray> *protocollist;
+    QQueue<QByteArray> *protocollist;
     QMap<QString,Qrichdata *> *richdata;
     QTime time;
     bool runflag;

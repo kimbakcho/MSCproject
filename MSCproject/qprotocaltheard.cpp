@@ -1,6 +1,6 @@
 #include "qprotocaltheard.h"
 
-qprotocaltheard::qprotocaltheard(QVector<QByteArray> *protocollist, QMap<QString,Qrichdata *> *richdata,
+qprotocaltheard::qprotocaltheard(QQueue<QByteArray> *protocollist, QMap<QString,Qrichdata *> *richdata,
                                 QMap<QString,QString> *shcodemap, xing *x1,Tcpserverframe *tmf)
 {
     this->protocollist = protocollist;
@@ -15,8 +15,14 @@ qprotocaltheard::qprotocaltheard(QVector<QByteArray> *protocollist, QMap<QString
 void qprotocaltheard::run(){
     while(runflag){
         while(!protocollist->isEmpty()){
-            data = protocollist->takeFirst();
-            data_str = QString(data);
+            data = protocollist->dequeue();
+            int datasize = data.size();
+            if(datasize>0){
+                data_str = QString(data);
+            }else {
+                continue;
+            }
+
             time = QTime::currentTime();
             timestr = time.toString("hh:mm:ss");
             fromdata = kor(data);

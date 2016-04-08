@@ -1,6 +1,6 @@
 #include "qserversocket.h"
 
-QServersocket::QServersocket(int port,QVector<QByteArray> *protocollist,QVector<Qconnection *> *socketllist,QLabel *count)
+QServersocket::QServersocket(int port,QQueue<QByteArray> *protocollist,QVector<Qconnection *> *socketllist,QLabel *count)
 {
     this->protocollist = protocollist;
     this->socketllist = socketllist;

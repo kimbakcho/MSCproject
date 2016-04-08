@@ -745,7 +745,7 @@ void xing::func_t0425OutBlock1(LPRECV_PACKET pRpData){
                 data_obj.AcntNo = qb_temp_obj[1].data();
 
                 qb_temp_obj[2] = tmf->QEjpwumber->text().toLocal8Bit();
-                data_obj.AcntNo = qb_temp_obj[2].data();
+                data_obj.InptPwd = qb_temp_obj[2].data();
 
                 qb_temp_obj[3] = expcode.toLocal8Bit();
                 data_obj.IsuNo = qb_temp_obj[3].data();

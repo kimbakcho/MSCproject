@@ -1,6 +1,6 @@
 #include "tcpserverframe.h"
 
-Tcpserverframe::Tcpserverframe(QVector<QByteArray> *protocollist,QWidget *parent) : QWidget(parent)
+Tcpserverframe::Tcpserverframe(QQueue<QByteArray> *protocollist,QWidget *parent) : QWidget(parent)
 {
     this->protocollist = protocollist;
     serversocket = NULL;
@@ -58,7 +58,7 @@ Tcpserverframe::Tcpserverframe(QVector<QByteArray> *protocollist,QWidget *parent
     connect(QEsetport,SIGNAL(textEdited(QString)),this,SLOT(QEsetport_change(QString)));
     connect(QEjaccnumber,SIGNAL(textEdited(QString)),this,SLOT(QEjaccnumber_change(QString)));
     connect(QEjpwumber,SIGNAL(textEdited(QString)),this,SLOT(QEjpwumber_change(QString)));
-    connect(QEjQLmoneyprice,SIGNAL(textEdited(QString)),this,SLOT(QEjpwumber_change(QString)));
+    connect(QEjQLmoneyprice,SIGNAL(textEdited(QString)),this,SLOT(QEjQLmoneyprice_change(QString)));
 
 }
 void Tcpserverframe::serverstart(){

@@ -8,13 +8,13 @@
 #include <QGridLayout>
 #include <qserversocket.h>
 #include <QSettings>
-#include <QVector>
+#include <QQueue>
 #include <qconnection.h>
 class Tcpserverframe : public QWidget
 {
     Q_OBJECT
 public:
-    explicit Tcpserverframe(QVector<QByteArray> *protocollist, QWidget *parent = 0);
+    explicit Tcpserverframe(QQueue<QByteArray> *protocollist, QWidget *parent = 0);
     QLabel *QLsetip;
     QLineEdit *QEsetip;
     QLabel *QLsetport;
@@ -37,7 +37,7 @@ public:
 
     QGridLayout *mgridlayout;
     QServersocket *serversocket;
-    QVector<QByteArray> *protocollist;
+    QQueue<QByteArray> *protocollist;
     QVector<Qconnection *> *socketllist;
 
 signals:

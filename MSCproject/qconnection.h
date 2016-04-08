@@ -3,16 +3,16 @@
 
 #include <QObject>
 #include <QTcpSocket>
-#include <QVector>
+#include <QQueue>
 #define kor(str) QString::fromLocal8Bit(str)
 class Qconnection : public QTcpSocket
 {
     Q_OBJECT
 public:
-    explicit Qconnection(QVector<QByteArray> *protocollist);
+    explicit Qconnection(QQueue<QByteArray> *protocollist);
     QByteArray readbuffer;
     QByteArray protocoldata;
-    QVector<QByteArray> *protocollist;
+    QQueue<QByteArray> *protocollist;
     bool debug;
 
 signals:

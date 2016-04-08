@@ -2,7 +2,7 @@
 #include "loginwiget.h"
 #include <QApplication>
 #include <xing.h>
-#include <QVector>
+#include <QQueue>
 #include <QMap>
 #include <qrichdata.h>
 #include <qprotocaltheard.h>
@@ -12,8 +12,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QVector<QByteArray> *protocollist;
-    protocollist = new QVector<QByteArray>();
+    QQueue<QByteArray> *protocollist;
+    protocollist = new QQueue<QByteArray>();
     QMap<QString,Qrichdata *> *richdata = new QMap<QString,Qrichdata *>();
     QMap<QString,QString> *shcodemap = new QMap<QString,QString>;
 //    Widget w;

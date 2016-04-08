@@ -1,6 +1,6 @@
 #include "qconnection.h"
 
-Qconnection::Qconnection(QVector<QByteArray> *protocollist)
+Qconnection::Qconnection(QQueue<QByteArray> *protocollist)
 {
     this->protocollist = protocollist;
     debug = false;
@@ -13,7 +13,7 @@ void Qconnection::readyforready(){
         if((unsigned char)readbuffer.at(i)==0xAA){
            protocoldata.clear();
         }else if((unsigned char)readbuffer.at(i)== 0xAB){
-            protocollist->append(protocoldata);
+            protocollist->enqueue(protocoldata);
         }else {
             protocoldata.append(readbuffer.at(i));
         }
