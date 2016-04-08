@@ -548,9 +548,10 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
        int loss_int;
        int obj_int;
        int testvalue;
+
        testvalue = richdata->size();
        data_temp1= richdata->value(shcode);
-       loss_int = data_temp1->loss.toInt();
+       loss_int = data_temp1->str_loss_result.toInt();
        obj_int = data_temp1->obj.toInt();
        if(loss_int>=price_int){
            data_temp1->loss_flag=true;
@@ -647,7 +648,7 @@ void xing::func_t0424OutBlock1(LPRECV_PACKET pRpData){
                qb_temp[3] = mdposqt.toLocal8Bit();
                data.strOrdQty = qb_temp[3].data();
                //price
-               qb_temp[4] = tempvalue->obj.toLocal8Bit();
+               qb_temp[4] = tempvalue->str_obj1_result.toLocal8Bit();
                data.strOrdPrc = qb_temp[4].data();
                //BnsTpCode
                qb_temp[5] = tpcode.toLocal8Bit();

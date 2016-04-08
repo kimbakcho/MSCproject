@@ -48,6 +48,25 @@ public:
     int real_price;
     int real_money;
     int total_ordqty;
+    double price_double;
+    double per1;
+    double per3;
+    double price_double_result;
+    double obj1_double;
+    double loss_double;
+
+    int price_reslut;
+    int obj1_result;
+    int loss_result;
+
+    QString str_price_result;
+    QString str_obj1_result;
+    QString str_loss_result;
+
+    QString real_tranding;
+
+
+
     Tcpserverframe *tmf;
     QString shcodedata;
 

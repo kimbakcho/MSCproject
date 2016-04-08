@@ -14,8 +14,12 @@ public:
     QString loss;
     QString obj;
     QString shcode;
+    QString str_price_result;
+    QString str_obj1_result;
+    QString str_loss_result;
     bool loss_flag;
     bool obj_flag;
+
 
 signals:
 

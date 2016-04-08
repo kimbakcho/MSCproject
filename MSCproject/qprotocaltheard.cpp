@@ -39,10 +39,31 @@ void qprotocaltheard::run(){
                 temp_rich->obj_flag=false;
                 reply_timeh = fromlist.at(10);
                 reply_timem = fromlist.at(12);
-                reply_time.setHMS(reply_timeh.toInt(),reply_timem.toInt()+1,10);
+                reply_time.setHMS(reply_timeh.toInt(),reply_timem.toInt()+1,30);
                 int i_reply_time = QTime(0,0,0).secsTo(reply_time);
                 //¸Å¼ö
                 price = temp_rich->price;
+                price_double = price.toDouble();
+                per1 = price_double*0.01;
+                price_double_result = price_double+per1;
+                price_reslut = (int)price_double_result;
+                per3 = price_double_result*0.03;
+                obj1_double = price_double_result+per3;
+                obj1_result = (int)obj1_double;
+                loss_double = price_double_result-per3;
+                loss_result = (int)loss_double;
+
+                str_price_result = QString("%1").arg(price_reslut);
+                str_obj1_result = QString("%1").arg(obj1_result);
+                str_loss_result = QString("%1").arg(loss_result);
+                temp_rich->str_price_result = QString(str_price_result);
+                temp_rich->str_obj1_result = QString(str_obj1_result);
+                temp_rich->str_loss_result = QString(str_loss_result);
+
+                real_tranding = QString(" real_price=%1, real_obj1=%2, real_loss =%3")
+                        .arg(temp_rich->str_price_result).arg(temp_rich->str_obj1_result).arg(temp_rich->str_loss_result);
+
+
                 tpcode = "2";
                 prcptncode = "00";
                 mgntrncode = "000";
@@ -59,7 +80,7 @@ void qprotocaltheard::run(){
                 data060.strAcntNo = qb_temp[2].data();
 
                 //price qty
-                real_price = price.toInt();
+                real_price = price_reslut;
                 real_money = tmf->QEjQLmoneyprice->text().toInt();
                 total_ordqty  = real_money/real_price;
                 ju_count.sprintf("%d",total_ordqty);
@@ -67,7 +88,7 @@ void qprotocaltheard::run(){
                 data060.strOrdQty = qb_temp[3].data();
 
                 //price
-                qb_temp[4] = price.toLocal8Bit();
+                qb_temp[4] = str_price_result.toLocal8Bit();
                 data060.strOrdPrc = qb_temp[4].data();
 
                 //BnsTpCode
@@ -94,11 +115,11 @@ void qprotocaltheard::run(){
                     result_3 = x1->CSPAT00600_Request(true,data060);
                  }else{
                      richdata->insert(temp_rich->shcode,temp_rich);
-                     qDebug()<<fromdata<<timestr<<"missbuy";
+                     qDebug()<<fromdata<<timestr<<"missbuy"<<real_tranding;
                  }
              if(result_3){
                     richdata->insert(temp_rich->shcode,temp_rich);
-                    qDebug()<<fromdata<<timestr<<"buy";
+                    qDebug()<<fromdata<<timestr<<"buy"<<real_tranding;
                     QByteArray qt_temp_1;
                     t1101InBlockdata data_1;
                     qt_temp_1 = QString(temp_rich->shcode).toLocal8Bit();
