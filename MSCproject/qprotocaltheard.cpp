@@ -39,7 +39,7 @@ void qprotocaltheard::run(){
                 temp_rich->obj_flag=false;
                 reply_timeh = fromlist.at(10);
                 reply_timem = fromlist.at(12);
-                reply_time.setHMS(reply_timeh.toInt(),reply_timem.toInt()+1,30);
+                reply_time.setHMS(reply_timeh.toInt(),reply_timem.toInt()+1,20);
                 int i_reply_time = QTime(0,0,0).secsTo(reply_time);
                 //¸Å¼ö
                 price = temp_rich->price;
@@ -111,8 +111,10 @@ void qprotocaltheard::run(){
 
 
 
-                real_tranding = QString(" real_price=%1, real_obj1=%2, real_loss =%3")
-                        .arg(temp_rich->str_price_result).arg(temp_rich->str_obj1_result).arg(temp_rich->str_loss_result);
+//                real_tranding = QString(" real_price=%1, real_obj1=%2, real_loss =%3")
+//                        .arg(temp_rich->str_price_result).arg(temp_rich->str_obj1_result).arg(temp_rich->str_loss_result);
+
+                real_tranding = "";
 
 
                 tpcode = "2";
@@ -131,7 +133,7 @@ void qprotocaltheard::run(){
                 data060.strAcntNo = qb_temp[2].data();
 
                 //price qty
-                real_price = price_reslut;
+                real_price = price.toInt();
                 real_money = tmf->QEjQLmoneyprice->text().toInt();
                 total_ordqty  = real_money/real_price;
                 ju_count.sprintf("%d",total_ordqty);
@@ -139,7 +141,7 @@ void qprotocaltheard::run(){
                 data060.strOrdQty = qb_temp[3].data();
 
                 //price
-                qb_temp[4] = str_price_result.toLocal8Bit();
+                qb_temp[4] = price.toLocal8Bit();
                 data060.strOrdPrc = qb_temp[4].data();
 
                 //BnsTpCode
@@ -177,6 +179,9 @@ void qprotocaltheard::run(){
                     data_1.shcode = qt_temp_1.data();
                     x1->t1101_Request(true,data_1);
                 }
+            }else {
+                 //qDebug()<<fromdata;
+
             }
         }
     }
