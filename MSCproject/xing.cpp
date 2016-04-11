@@ -704,14 +704,16 @@ void xing::func_t0425OutBlock1(LPRECV_PACKET pRpData){
         QString ordno = QString::fromLocal8Bit(pAllOutBlock->OutBlock1[i].ordno,sizeof(pAllOutBlock->OutBlock1[i].ordno));
         QString ordrem = QString::fromLocal8Bit(pAllOutBlock->OutBlock1[i].ordrem,sizeof(pAllOutBlock->OutBlock1[i].ordrem));
         QString hogagb = QString::fromLocal8Bit(pAllOutBlock->OutBlock1[i].hogagb,sizeof(pAllOutBlock->OutBlock1[i].hogagb));
+        QString medosu = QString::fromLocal8Bit(pAllOutBlock->OutBlock1[i].medosu,sizeof(pAllOutBlock->OutBlock1[i].medosu));
         expcode.replace(" ","");
         orgordno.replace(" ","");
         ordrem.replace(" ","");
+        medosu.replace(" ","");
         if(richdata->contains(expcode)){
             Qrichdata *tempvalue;
             tempvalue = richdata->value(expcode);
             QString hname = tempvalue->hname;
-            if(tempvalue->loss_flag && (hogagb.compare("03")!=0)){
+            if(tempvalue->loss_flag && (hogagb.compare("03")!=0) && medosu.compare("매도")){
                 //매도 취소 주문
                 QByteArray qb_temp_loss[10];
                 CSPAT00800InBlock1data data_loss;
@@ -734,7 +736,7 @@ void xing::func_t0425OutBlock1(LPRECV_PACKET pRpData){
 
                 CSPAT00800_Request(true,data_loss);
             }
-            if(tempvalue->obj_flag){
+            if((tempvalue->obj_flag) && medosu.compare("매수")){
                 //매수 취소 주문
                 QByteArray qb_temp_obj[10];
                 CSPAT00800InBlock1data data_obj;
