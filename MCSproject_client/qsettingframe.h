@@ -9,12 +9,13 @@
 #include <QSettings>
 #include <qtcsocket.h>
 #include <webwiget.h>
+#include <whttpwiget.h>
 
 class QSettingframe : public QWidget
 {
     Q_OBJECT
 public:
-    explicit QSettingframe(QTcsocket *tcsocket,QVector<webwiget *> *vecweb,QWidget *parent = 0);
+    explicit QSettingframe(QTcsocket *tcsocket,QVector<WHttpwiget *> *vecweb,QWidget *parent = 0);
     QLabel *QLSetip;
     QLineEdit *QEsetip;
     QLabel *QLSetport;
@@ -24,7 +25,8 @@ public:
     QTcsocket *tcsocket;
     QLabel *QLwebwigetcount;
     QLineEdit *QEwebwigetcount;
-    QVector<webwiget *> *vecweb;
+    QVector<WHttpwiget *> *vecweb;
+
 
 
 

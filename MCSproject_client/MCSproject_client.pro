@@ -17,9 +17,11 @@ SOURCES += main.cpp\
         widget.cpp \
     qsettingframe.cpp \
     qtcsocket.cpp \
-    webwiget.cpp
+    webwiget.cpp \
+    whttpwiget.cpp
 
 HEADERS  += widget.h \
     qsettingframe.h \
     qtcsocket.h \
-    webwiget.h
+    webwiget.h \
+    whttpwiget.h

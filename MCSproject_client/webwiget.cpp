@@ -51,6 +51,7 @@ void webwiget::autostep(){
     QByteArray postdata_2;
     postdata_2.append("M_ID=vngkgk624&M_Password=super624");
     load(requ,QNetworkAccessManager::PostOperation,postdata_2);
+
 }
 
 void webwiget::finishedpage(bool flag){

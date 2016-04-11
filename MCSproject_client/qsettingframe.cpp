@@ -1,5 +1,5 @@
 #include "qsettingframe.h"
-QSettingframe::QSettingframe(QTcsocket *tcsocket,QVector<webwiget*> *vecweb,QWidget *parent) : QWidget(parent)
+QSettingframe::QSettingframe(QTcsocket *tcsocket,QVector<WHttpwiget*> *vecweb,QWidget *parent) : QWidget(parent)
 {
     this->tcsocket = tcsocket;
     this->vecweb = vecweb;
@@ -73,8 +73,10 @@ void QSettingframe::Qstartbutton_push(){
         tcsocket = new QTcsocket(QEsetip->text(),QEsetport->text().toInt());
     }
     for(int i=0;i<QEwebwigetcount->text().toInt();i++){
-         webwiget *tempwebbiget = new webwiget(tcsocket,vecweb);
-         vecweb->append(tempwebbiget);
+        WHttpwiget * tempwebbiget = new WHttpwiget(tcsocket,vecweb);
+        vecweb->append(tempwebbiget);
+        //webwiget *tempwebbiget = new webwiget(tcsocket,vecweb);
+         //vecweb->append(tempwebbiget);
          //tempwebbiget->paly_flag = true;
          //tempwebbiget->show();
          //tempwebbiget->autostep();
