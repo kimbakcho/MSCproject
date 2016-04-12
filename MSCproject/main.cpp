@@ -9,6 +9,7 @@
 #include <QFile>
 #include <tjango_th.h>
 #include <tpricemoniter.h>
+#include <QMutex>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -16,6 +17,8 @@ int main(int argc, char *argv[])
     protocollist = new QQueue<QByteArray>();
     QMap<QString,Qrichdata *> *richdata = new QMap<QString,Qrichdata *>();
     QMap<QString,QString> *shcodemap = new QMap<QString,QString>;
+    QMutex *mutex;
+    mutex = new QMutex();
 //    Widget w;
 //    w.show();
     xing *x1;
@@ -32,7 +35,7 @@ int main(int argc, char *argv[])
         shcode_result = temp.split(",");
         shcodemap->insert(shcode_result.at(0),shcode_result.at(1));
     }
-    Tcpserverframe *tmf = new Tcpserverframe(protocollist);
+    Tcpserverframe *tmf = new Tcpserverframe(protocollist,mutex);
     x1 = new xing(richdata,tmf);
     if(x1->init()){
         if(x1->ETK_Connect(0)){
@@ -48,7 +51,7 @@ int main(int argc, char *argv[])
     Loginwiget *login = new Loginwiget(x1,tmf);
     login->show();
 
-    qprotocaltheard *protocalth = new qprotocaltheard(protocollist,richdata,shcodemap,x1,tmf);
+    qprotocaltheard *protocalth = new qprotocaltheard(protocollist,richdata,shcodemap,x1,tmf,mutex);
     protocalth->start();
 
     tjango_th *jangoth  = new tjango_th(x1,tmf);

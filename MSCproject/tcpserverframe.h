@@ -14,7 +14,7 @@ class Tcpserverframe : public QWidget
 {
     Q_OBJECT
 public:
-    explicit Tcpserverframe(QQueue<QByteArray> *protocollist, QWidget *parent = 0);
+    explicit Tcpserverframe(QQueue<QByteArray> *protocollist, QMutex *mutex, QWidget *parent = 0);
     QLabel *QLsetip;
     QLineEdit *QEsetip;
     QLabel *QLsetport;
@@ -39,6 +39,7 @@ public:
     QServersocket *serversocket;
     QQueue<QByteArray> *protocollist;
     QVector<Qconnection *> *socketllist;
+    QMutex *mutex;
 
 signals:
 

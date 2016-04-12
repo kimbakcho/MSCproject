@@ -12,12 +12,13 @@ class QServersocket : public QTcpServer
 {
     Q_OBJECT
 public:
-    explicit QServersocket(int port, QQueue<QByteArray> *protocollist, QVector<Qconnection *> *socketllist,QLabel *count);
+    explicit QServersocket(int port, QQueue<QByteArray> *protocollist, QVector<Qconnection *> *socketllist, QLabel *count, QMutex *mutex);
     void incomingConnection(int);
     QQueue<QByteArray> *protocollist;
     QVector<Qconnection *> *socketllist;
     QLabel *count;
     int join_count;
+    QMutex *mutex;
 
 signals:
 

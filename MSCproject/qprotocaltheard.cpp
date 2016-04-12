@@ -1,7 +1,7 @@
 #include "qprotocaltheard.h"
 
 qprotocaltheard::qprotocaltheard(QQueue<QByteArray> *protocollist, QMap<QString,Qrichdata *> *richdata,
-                                QMap<QString,QString> *shcodemap, xing *x1,Tcpserverframe *tmf)
+                                QMap<QString,QString> *shcodemap, xing *x1,Tcpserverframe *tmf,QMutex *mutex)
 {
     this->protocollist = protocollist;
     this->richdata = richdata;
@@ -9,6 +9,7 @@ qprotocaltheard::qprotocaltheard(QQueue<QByteArray> *protocollist, QMap<QString,
     runflag = true;
     this->x1 = x1;
     this->tmf = tmf;
+    this->mutex = mutex;
 
 }
 
@@ -27,7 +28,9 @@ void qprotocaltheard::run(){
             timestr = time.toString("hh:mm:ss");
             fromdata = kor(data);
             fromlist = fromdata.split(",");
-            shcodedata=shcodemap->value(fromlist.at(2));
+            hname = fromlist.at(2);
+            hname.replace(" ","");
+            shcodedata=shcodemap->value(hname);
             if(!richdata->contains(shcodedata)){
                 Qrichdata * temp_rich = new Qrichdata();
                 temp_rich->hname = fromlist.at(2);
@@ -167,11 +170,15 @@ void qprotocaltheard::run(){
                  if(i_reply_time>=QTime(0,0,0).secsTo(time)){
                     result_3 = x1->CSPAT00600_Request(true,data060);
                  }else{
+                     mutex->lock();
                      richdata->insert(temp_rich->shcode,temp_rich);
+                     mutex->unlock();
                      qDebug()<<fromdata<<timestr<<"missbuy"<<real_tranding;
                  }
              if(result_3){
+                    mutex->lock();
                     richdata->insert(temp_rich->shcode,temp_rich);
+                    mutex->unlock();
                     qDebug()<<fromdata<<timestr<<"buy"<<real_tranding;
                     QByteArray qt_temp_1;
                     t1101InBlockdata data_1;

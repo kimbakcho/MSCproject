@@ -1,8 +1,9 @@
 #include "qconnection.h"
 
-Qconnection::Qconnection(QQueue<QByteArray> *protocollist)
+Qconnection::Qconnection(QQueue<QByteArray> *protocollist, QMutex *mutex)
 {
     this->protocollist = protocollist;
+    this->mutex = mutex;
     debug = false;
     connect(this,SIGNAL(readyRead()),this,SLOT(readyforready()));
 }
@@ -13,7 +14,10 @@ void Qconnection::readyforready(){
         if((unsigned char)readbuffer.at(i)==0xAA){
            protocoldata.clear();
         }else if((unsigned char)readbuffer.at(i)== 0xAB){
+            mutex->lock();
             protocollist->enqueue(protocoldata);
+            mutex->unlock();
+
         }else {
             protocoldata.append(readbuffer.at(i));
         }

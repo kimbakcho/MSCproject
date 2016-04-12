@@ -20,7 +20,7 @@ class qprotocaltheard : public QThread
     Q_OBJECT
 public:
     explicit qprotocaltheard(QQueue<QByteArray> *protocollist, QMap<QString, Qrichdata *> *richdata
-                             , QMap<QString, QString> *shcodemap, xing *x1, Tcpserverframe *tmf);
+                             , QMap<QString, QString> *shcodemap, xing *x1, Tcpserverframe *tmf, QMutex *mutex);
     QQueue<QByteArray> *protocollist;
     QMap<QString,Qrichdata *> *richdata;
     QTime time;
@@ -69,6 +69,9 @@ public:
 
     Tcpserverframe *tmf;
     QString shcodedata;
+
+    QMutex *mutex;
+    QString hname;
 
 private:
     void run();

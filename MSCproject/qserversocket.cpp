@@ -1,16 +1,18 @@
 #include "qserversocket.h"
 
-QServersocket::QServersocket(int port,QQueue<QByteArray> *protocollist,QVector<Qconnection *> *socketllist,QLabel *count)
+QServersocket::QServersocket(int port, QQueue<QByteArray> *protocollist, QVector<Qconnection *> *socketllist, QLabel *count, QMutex *mutex)
 {
     this->protocollist = protocollist;
     this->socketllist = socketllist;
     this->count = count;
+    this->mutex= mutex;
     join_count=0;
     listen(QHostAddress::Any,port);
 }
 
 void QServersocket::incomingConnection(int socketDescriptor){
-    Qconnection *connection = new Qconnection(protocollist);
+    Qconnection *connection = new Qconnection(protocollist,mutex);
+
     connection->setSocketDescriptor(socketDescriptor);
     socketllist->append(connection);
     join_count++;

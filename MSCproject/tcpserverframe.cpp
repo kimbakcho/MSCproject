@@ -1,8 +1,9 @@
 #include "tcpserverframe.h"
 
-Tcpserverframe::Tcpserverframe(QQueue<QByteArray> *protocollist,QWidget *parent) : QWidget(parent)
+Tcpserverframe::Tcpserverframe(QQueue<QByteArray> *protocollist,QMutex *mutex,QWidget *parent) : QWidget(parent)
 {
     this->protocollist = protocollist;
+    this->mutex = mutex;
     serversocket = NULL;
     socketllist = new QVector<Qconnection *>;
     QLsetip = new QLabel("Set ip");
@@ -65,7 +66,7 @@ void Tcpserverframe::serverstart(){
 
     if(serversocket == NULL){
         int port = QEsetport->text().toInt();
-        serversocket = new QServersocket(port,protocollist,socketllist,joincount_data);
+        serversocket = new QServersocket(port,protocollist,socketllist,joincount_data,mutex);
 
     }
 }

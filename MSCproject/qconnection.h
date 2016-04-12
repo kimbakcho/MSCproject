@@ -9,11 +9,12 @@ class Qconnection : public QTcpSocket
 {
     Q_OBJECT
 public:
-    explicit Qconnection(QQueue<QByteArray> *protocollist);
+    explicit Qconnection(QQueue<QByteArray> *protocollist,QMutex *mutex);
     QByteArray readbuffer;
     QByteArray protocoldata;
     QQueue<QByteArray> *protocollist;
     bool debug;
+    QMutex *mutex;
 
 signals:
 
