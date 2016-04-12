@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     QQueue<QByteArray> *protocollist;
+
     protocollist = new QQueue<QByteArray>();
     QMap<QString,Qrichdata *> *richdata = new QMap<QString,Qrichdata *>();
     QMap<QString,QString> *shcodemap = new QMap<QString,QString>;

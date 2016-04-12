@@ -10,6 +10,8 @@
 #include <QSettings>
 #include <QQueue>
 #include <qconnection.h>
+#include <QTextEdit>
+#include <QScrollBar>
 class Tcpserverframe : public QWidget
 {
     Q_OBJECT
@@ -40,6 +42,11 @@ public:
     QQueue<QByteArray> *protocollist;
     QVector<Qconnection *> *socketllist;
     QMutex *mutex;
+
+    QTextEdit *logtxt;
+    QScrollBar *logtxtbar;
+
+
 
 signals:
 

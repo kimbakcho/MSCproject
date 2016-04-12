@@ -22,6 +22,9 @@ Tcpserverframe::Tcpserverframe(QQueue<QByteArray> *protocollist,QMutex *mutex,QW
     QEjpwumber->setEchoMode(QLineEdit::Password);
     QLmoneyprice = new QLabel("money");
     QEjQLmoneyprice = new QLineEdit();
+
+    logtxt = new QTextEdit();
+
     mgridlayout = new QGridLayout();
     mgridlayout->addWidget(QLsetip,0,0);
     mgridlayout->addWidget(QEsetip,0,1);
@@ -38,8 +41,13 @@ Tcpserverframe::Tcpserverframe(QQueue<QByteArray> *protocollist,QMutex *mutex,QW
     mgridlayout->addWidget(QEjpwumber,7,1);
     mgridlayout->addWidget(QLmoneyprice,8,0);
     mgridlayout->addWidget(QEjQLmoneyprice,8,1);
-
-
+    mgridlayout->addWidget(new QLabel("                                  "),8,3);
+    mgridlayout->addWidget(new QLabel("                                  "),8,4);
+    mgridlayout->addWidget(new QLabel("                                  "),8,5);
+    mgridlayout->addWidget(new QLabel("                                  "),8,6);
+    mgridlayout->addWidget(new QLabel("                                  "),8,7);
+    mgridlayout->addWidget(new QLabel("                                  "),8,8);
+    mgridlayout->addWidget(logtxt,0,3,3,8);
 
     setLayout(mgridlayout);
     //--read---

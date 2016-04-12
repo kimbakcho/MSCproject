@@ -1,6 +1,5 @@
 #include "xing.h"
 
-
 xing::xing(QMap<QString,Qrichdata *> *richdata,Tcpserverframe *tmf,QWidget *parent) : QWidget(parent)
 {
     htsip = "hts.ebestsec.co.kr";
@@ -667,6 +666,7 @@ void xing::func_t0424OutBlock1(LPRECV_PACKET pRpData){
 
               if(!tempvalue->loss_flag){
                   int result_3 = CSPAT00600_Request(true,data);
+                   tmf->logtxt->append(QString("func_t0424OutBlock1 to CSPAT00600_Request expcode = %1 hname = %2").arg(expcode).arg(hname));
                    qDebug()<<QString("func_t0424OutBlock1 to CSPAT00600_Request expcode = %1 hname = %2").arg(expcode).arg(hname);
               }else if (tempvalue->loss_flag){
                   //¼ÕÀý

@@ -173,13 +173,19 @@ void qprotocaltheard::run(){
                      mutex->lock();
                      richdata->insert(temp_rich->shcode,temp_rich);
                      mutex->unlock();
+                     QString log = QString("%1 %2 %3 %4").arg(fromdata).arg(timestr).arg(QString(" missbuy")).arg(real_tranding);
+                     tmf->logtxt->append(log);
                      qDebug()<<fromdata<<timestr<<"missbuy"<<real_tranding;
+
                  }
              if(result_3){
                     mutex->lock();
                     richdata->insert(temp_rich->shcode,temp_rich);
                     mutex->unlock();
+                    QString log = QString("%1 %2 %3 %4").arg(fromdata).arg(timestr).arg(QString(" buy")).arg(real_tranding);
+                    tmf->logtxt->append(log);
                     qDebug()<<fromdata<<timestr<<"buy"<<real_tranding;
+
                     QByteArray qt_temp_1;
                     t1101InBlockdata data_1;
                     qt_temp_1 = QString(temp_rich->shcode).toLocal8Bit();
