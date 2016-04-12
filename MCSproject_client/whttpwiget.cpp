@@ -21,7 +21,7 @@ WHttpwiget::WHttpwiget(QTcsocket *tcsocket,QVector<WHttpwiget *> *vecweb){
     lasturl.setUrl(urllastsite);
     vipcheck = false;
 
-    timer->setInterval(20000);
+    timer->setInterval(90000);
     timer->start();
     paly_flag = false;
     connect(tcsocket,SIGNAL(readyRead()),this,SLOT(read_data()));
@@ -45,6 +45,8 @@ void WHttpwiget::read_data(){
          for(int i=0;i<vecweb->size();i++){
              WHttpwiget *tempweb  =vecweb->at(i);
              tempweb->paly_flag = false;
+             urllastsite=" ";
+             lasturl.setUrl(urllastsite);
 
          }
      }
