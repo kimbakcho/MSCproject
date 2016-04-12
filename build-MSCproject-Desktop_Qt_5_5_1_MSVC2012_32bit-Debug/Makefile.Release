@@ -640,8 +640,17 @@ release\moc_xing.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		..\MSCproject\qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
 		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
 		..\MSCproject\xing.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\xing.h -o release\moc_xing.cpp
 
@@ -797,6 +806,15 @@ release\moc_loginwiget.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		..\MSCproject\qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
 		..\MSCproject\loginwiget.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\loginwiget.h -o release\moc_loginwiget.cpp
 
@@ -929,9 +947,17 @@ release\moc_tcpserverframe.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		..\MSCproject\qconnection.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
 		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
 		..\MSCproject\tcpserverframe.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\tcpserverframe.h -o release\moc_tcpserverframe.cpp
 
@@ -1066,7 +1092,8 @@ release\moc_qserversocket.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		..\MSCproject\qconnection.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
@@ -1178,7 +1205,8 @@ release\moc_qconnection.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		..\MSCproject\qconnection.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\qconnection.h -o release\moc_qconnection.cpp
 
@@ -1334,8 +1362,17 @@ release\moc_qprotocaltheard.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		..\MSCproject\qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
 		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
 		..\MSCproject\qprotocaltheard.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\qprotocaltheard.h -o release\moc_qprotocaltheard.cpp
 
@@ -1489,8 +1526,17 @@ release\moc_tjango_th.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		..\MSCproject\qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
 		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
 		..\MSCproject\tjango_th.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\tjango_th.h -o release\moc_tjango_th.cpp
 
@@ -1645,8 +1691,17 @@ release\moc_tpricemoniter.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		..\MSCproject\qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
 		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
 		..\MSCproject\tpricemoniter.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\tpricemoniter.h -o release\moc_tpricemoniter.cpp
 
@@ -1820,6 +1875,15 @@ release\main.obj: ..\MSCproject\main.cpp ../MSCproject/widget.h \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QApplication \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qapplication.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
@@ -1835,7 +1899,8 @@ release\main.obj: ..\MSCproject\main.cpp ../MSCproject/widget.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QFile \
 		../MSCproject/tjango_th.h \
 		../MSCproject/tpricemoniter.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\QList
+		C:\Qt\5.5\msvc2012\include\QtCore\QList \
+		C:\Qt\5.5\msvc2012\include\QtCore\QMutex
 
 release\widget.obj: ..\MSCproject\widget.cpp ../MSCproject/widget.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
@@ -2089,8 +2154,17 @@ release\xing.obj: ..\MSCproject\xing.cpp ../MSCproject/xing.h \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
 
 release\loginwiget.obj: ..\MSCproject\loginwiget.cpp ../MSCproject/loginwiget.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
@@ -2244,7 +2318,16 @@ release\loginwiget.obj: ..\MSCproject\loginwiget.cpp ../MSCproject/loginwiget.h 
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qhostaddress.h \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
-		../MSCproject/qconnection.h
+		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
 
 release\tcpserverframe.obj: ..\MSCproject\tcpserverframe.cpp ../MSCproject/tcpserverframe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
@@ -2376,9 +2459,17 @@ release\tcpserverframe.obj: ..\MSCproject\tcpserverframe.cpp ../MSCproject/tcpse
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		../MSCproject/qconnection.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
 
 release\servertheard.obj: ..\MSCproject\servertheard.cpp ../MSCproject/servertheard.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
@@ -2511,7 +2602,8 @@ release\qserversocket.obj: ..\MSCproject\qserversocket.cpp ../MSCproject/qserver
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		../MSCproject/qconnection.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
@@ -2622,7 +2714,8 @@ release\qconnection.obj: ..\MSCproject\qconnection.cpp ../MSCproject/qconnection
 		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\QVector
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h
 
 release\qprotocaltheard.obj: ..\MSCproject\qprotocaltheard.cpp ../MSCproject/qprotocaltheard.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
@@ -2777,8 +2870,17 @@ release\qprotocaltheard.obj: ..\MSCproject\qprotocaltheard.cpp ../MSCproject/qpr
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
 
 release\qrichdata.obj: ..\MSCproject\qrichdata.cpp ../MSCproject/qrichdata.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
@@ -2987,8 +3089,17 @@ release\tjango_th.obj: ..\MSCproject\tjango_th.cpp ../MSCproject/tjango_th.h \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
 
 release\tpricemoniter.obj: ..\MSCproject\tpricemoniter.cpp ../MSCproject/tpricemoniter.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
@@ -3142,8 +3253,17 @@ release\tpricemoniter.obj: ..\MSCproject\tpricemoniter.cpp ../MSCproject/tpricem
 		C:\Qt\5.5\msvc2012\include\QtNetwork\QTcpSocket \
 		C:\Qt\5.5\msvc2012\include\QtNetwork\qtcpsocket.h \
 		../MSCproject/qconnection.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QQueue \
+		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
 
 release\moc_widget.obj: release\moc_widget.cpp 
 

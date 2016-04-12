@@ -16,6 +16,7 @@ qprotocaltheard::qprotocaltheard(QQueue<QByteArray> *protocollist, QMap<QString,
 void qprotocaltheard::run(){
     while(runflag){
         while(!protocollist->isEmpty()){
+            mutex->lock();
             data = protocollist->dequeue();
             int datasize = data.size();
             if(datasize>0){
@@ -23,6 +24,7 @@ void qprotocaltheard::run(){
             }else {
                 continue;
             }
+            mutex->unlock();
 
             time = QTime::currentTime();
             timestr = time.toString("hh:mm:ss");
@@ -170,18 +172,18 @@ void qprotocaltheard::run(){
                  if(i_reply_time>=QTime(0,0,0).secsTo(time)){
                     result_3 = x1->CSPAT00600_Request(true,data060);
                  }else{
-                     mutex->lock();
+
                      richdata->insert(temp_rich->shcode,temp_rich);
-                     mutex->unlock();
+
                      QString log = QString("%1 %2 %3 %4").arg(fromdata).arg(timestr).arg(QString(" missbuy")).arg(real_tranding);
                      tmf->logtxt->append(log);
                      qDebug()<<fromdata<<timestr<<"missbuy"<<real_tranding;
 
                  }
              if(result_3){
-                    mutex->lock();
+
                     richdata->insert(temp_rich->shcode,temp_rich);
-                    mutex->unlock();
+
                     QString log = QString("%1 %2 %3 %4").arg(fromdata).arg(timestr).arg(QString(" buy")).arg(real_tranding);
                     tmf->logtxt->append(log);
                     qDebug()<<fromdata<<timestr<<"buy"<<real_tranding;
