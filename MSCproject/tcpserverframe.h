@@ -12,6 +12,8 @@
 #include <qconnection.h>
 #include <QTextEdit>
 #include <QScrollBar>
+#include <QListView>
+#include <QStringListModel>
 class Tcpserverframe : public QWidget
 {
     Q_OBJECT
@@ -43,8 +45,13 @@ public:
     QVector<Qconnection *> *socketllist;
     QMutex *mutex;
 
+
     QTextEdit *logtxt;
     QScrollBar *logtxtbar;
+    QListView *iplistview;
+    QStringList ipliststr;
+    QAbstractItemModel *iplistmodel;
+
 
 
 

@@ -23,6 +23,16 @@ Tcpserverframe::Tcpserverframe(QQueue<QByteArray> *protocollist,QMutex *mutex,QW
     QLmoneyprice = new QLabel("money");
     QEjQLmoneyprice = new QLineEdit();
 
+    iplistmodel = new QStringListModel(ipliststr);
+
+    iplistview = new QListView();
+
+    iplistview->setModel(iplistmodel);
+//    iplistmodel->insertRow(iplistmodel->rowCount());
+//    iplistmodel->setData(iplistmodel->index(0,0),"test");
+
+
+
     logtxt = new QTextEdit();
 
     mgridlayout = new QGridLayout();
@@ -48,6 +58,7 @@ Tcpserverframe::Tcpserverframe(QQueue<QByteArray> *protocollist,QMutex *mutex,QW
     mgridlayout->addWidget(new QLabel("                                  "),8,7);
     mgridlayout->addWidget(new QLabel("                                  "),8,8);
     mgridlayout->addWidget(logtxt,0,3,3,8);
+    mgridlayout->addWidget(iplistview,3,3,3,8);
 
     setLayout(mgridlayout);
     //--read---
@@ -74,7 +85,7 @@ void Tcpserverframe::serverstart(){
 
     if(serversocket == NULL){
         int port = QEsetport->text().toInt();
-        serversocket = new QServersocket(port,protocollist,socketllist,joincount_data,mutex);
+        serversocket = new QServersocket(port,protocollist,socketllist,joincount_data,mutex,this);
 
     }
 }
