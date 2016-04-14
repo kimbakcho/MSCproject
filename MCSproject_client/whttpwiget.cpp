@@ -298,7 +298,11 @@ void WHttpwiget::loadfinished(QNetworkReply *reply){
 
 void WHttpwiget::sitemoniter(){
     if(tempsitecount==siteplaycount){
+        if(paly_flag){
          reply = manager->get(lasturl);
+        }else {
+
+        }
     }else {
         tempsitecount=siteplaycount;
     }
