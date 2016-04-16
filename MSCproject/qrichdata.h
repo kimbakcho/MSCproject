@@ -19,6 +19,7 @@ public:
     QString str_loss_result;
     bool loss_flag;
     bool obj_flag;
+    bool init_priceflag;
 
 
 signals:

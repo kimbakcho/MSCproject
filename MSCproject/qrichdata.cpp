@@ -2,6 +2,6 @@
 
 Qrichdata::Qrichdata()
 {
-
+    init_priceflag = false;
 }
 
