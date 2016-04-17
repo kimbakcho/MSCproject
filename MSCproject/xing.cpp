@@ -561,6 +561,7 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
        if(data_temp1->init_priceflag){
            tmf->logtxt->append(QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
                                .arg(data_temp1->hname).arg(data_temp1->shcode).arg(data_temp1->price).arg(price_int).arg(data_temp1->loss).arg(data_temp1->obj));
+           data_temp1->init_priceflag = false;
        }
 }
 
