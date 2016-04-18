@@ -42,6 +42,7 @@ void qprotocaltheard::run(){
                 temp_rich->obj = fromlist.at(8);
                 temp_rich->loss_flag=false;
                 temp_rich->obj_flag=false;
+                temp_rich->init_priceflag = true;
                 reply_timeh = fromlist.at(10);
                 reply_timem = fromlist.at(12);
                 reply_time.setHMS(reply_timeh.toInt(),reply_timem.toInt()+1,20);
