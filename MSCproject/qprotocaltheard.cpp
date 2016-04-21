@@ -30,12 +30,15 @@ void qprotocaltheard::run(){
             timestr = time.toString("hh:mm:ss");
             fromdata = kor(data);
             fromlist = fromdata.split(",");
-            hname = fromlist.at(2);
+            temp_data1 = fromlist.at(2);
+            hname = temp_data1.toUpper();
             hname.replace(" ","");
             shcodedata=shcodemap->value(hname);
             if(!richdata->contains(shcodedata)){
                 Qrichdata * temp_rich = new Qrichdata();
-                temp_rich->hname = fromlist.at(2);
+                temp_data1 = fromlist.at(2);
+
+                temp_rich->hname = temp_data1.toUpper();
                 temp_rich->shcode = shcodedata;
                 temp_rich->price = fromlist.at(4);
                 temp_rich->loss = fromlist.at(6);

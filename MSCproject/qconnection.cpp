@@ -16,6 +16,7 @@ void Qconnection::readyforready(){
         }else if((unsigned char)readbuffer.at(i)== 0xAB){
             mutex->lock();
             protocollist->enqueue(protocoldata);
+            qDebug()<<kor(protocoldata);
             mutex->unlock();
 
         }else {

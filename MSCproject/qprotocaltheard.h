@@ -73,6 +73,8 @@ public:
     QMutex *mutex;
     QString hname;
 
+    QString temp_data1;
+
 private:
     void run();
 
