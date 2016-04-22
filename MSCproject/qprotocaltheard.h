@@ -75,6 +75,8 @@ public:
 
     QString temp_data1;
 
+
+
 private:
     void run();
 

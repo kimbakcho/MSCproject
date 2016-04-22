@@ -248,6 +248,8 @@ public:
 //-------------------------win id---------------------------------
     HWND xing_winid;
 
+    bool one_shot_flag;
+
 private:
     QByteArray serverip;
     bool nativeEvent(const QByteArray & eventType, void * message, long * result);

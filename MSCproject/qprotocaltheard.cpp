@@ -11,6 +11,7 @@ qprotocaltheard::qprotocaltheard(QQueue<QByteArray> *protocollist, QMap<QString,
     this->tmf = tmf;
     this->mutex = mutex;
 
+
 }
 
 void qprotocaltheard::run(){
@@ -173,13 +174,13 @@ void qprotocaltheard::run(){
              qb_temp[9] = ordcnditpcode.toLocal8Bit();
              data060.strOrdCndiTpCode = qb_temp[9].data();
              int result_3=0;
-                 if(i_reply_time>=QTime(0,0,0).secsTo(time)){
+                 if(i_reply_time>=QTime(0,0,0).secsTo(time)&& !x1->one_shot_flag){
                     result_3 = x1->CSPAT00600_Request(true,data060);
                  }else{
 
                      richdata->insert(temp_rich->shcode,temp_rich);
 
-                     QString log = QString("%1 %2 %3 %4").arg(fromdata).arg(timestr).arg(QString(" missbuy")).arg(real_tranding);
+                     QString log = QString("%1 %2 %3 %4 one_shot : %5").arg(fromdata).arg(timestr).arg(QString(" missbuy")).arg(real_tranding).arg(x1->one_shot_flag);
                      tmf->logtxt->append(log);
                      qDebug()<<fromdata<<timestr<<"missbuy"<<real_tranding;
 
