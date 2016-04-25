@@ -20,6 +20,8 @@ public:
     bool loss_flag;
     bool obj_flag;
     bool init_priceflag;
+    bool first_jong;
+    bool calok;
 
 
 signals:

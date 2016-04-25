@@ -553,16 +553,39 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
        data_temp1= richdata->value(shcode);
        loss_int = data_temp1->loss.toInt();
        obj_int = data_temp1->obj.toInt();
-       if(loss_int>=price_int){
-           data_temp1->loss_flag=true;
-       }
-       if(obj_int<=price_int){
-           data_temp1->obj_flag=true;
-       }
-       if(data_temp1->init_priceflag){
-           tmf->logtxt->append(QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
-                               .arg(data_temp1->hname).arg(data_temp1->shcode).arg(data_temp1->price).arg(price_int).arg(data_temp1->loss).arg(data_temp1->obj));
-           data_temp1->init_priceflag = false;
+
+       if(!data_temp1->first_jong){
+
+           if(loss_int>=price_int){
+               data_temp1->loss_flag=true;
+           }
+           if(obj_int<=price_int){
+               data_temp1->obj_flag=true;
+           }
+           if(data_temp1->init_priceflag){
+//               tmf->logtxt->append(QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
+//                                   .arg(data_temp1->hname).arg(data_temp1->shcode).arg(data_temp1->price).arg(price_int).arg(data_temp1->loss).arg(data_temp1->obj));
+
+               qDebug()<<QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
+                                                            .arg(data_temp1->hname).arg(data_temp1->shcode).arg(data_temp1->price).arg(price_int).arg(data_temp1->loss).arg(data_temp1->obj);
+               data_temp1->init_priceflag = false;
+           }
+       }else{
+            if(data_temp1->calok){
+                if(loss_int>=price_int){
+                    data_temp1->loss_flag=true;
+                }
+                if(obj_int<=price_int){
+                    data_temp1->obj_flag=true;
+                }
+                if(data_temp1->init_priceflag){
+//                    tmf->logtxt->append(QString("first jong start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
+//                                        .arg(data_temp1->hname).arg(data_temp1->shcode).arg(data_temp1->price).arg(price_int).arg(data_temp1->loss).arg(data_temp1->obj));
+                    qDebug()<<QString("first jong start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
+                                                                 .arg(data_temp1->hname).arg(data_temp1->shcode).arg(data_temp1->price).arg(price_int).arg(data_temp1->loss).arg(data_temp1->obj);
+                    data_temp1->init_priceflag = false;
+                }
+            }
        }
 }
 
@@ -639,7 +662,17 @@ void xing::func_t0424OutBlock1(LPRECV_PACKET pRpData){
                Qrichdata *tempvalue;
 
                tempvalue = richdata->value(expcode);
-
+               if(tempvalue->first_jong && !tempvalue->calok){
+                    pamt.replace(" ","");
+                    double temp_pamt = pamt.toDouble();
+                    double temp_obj =temp_pamt+(temp_pamt*0.03);
+                    int int_obj = temp_obj;
+                    tempvalue->obj = QString("%1").arg(int_obj);
+                    double temp_loss = temp_pamt-(temp_pamt*0.03);
+                    int int_loss = temp_loss;
+                    tempvalue->loss = QString("%1").arg(int_loss);
+                    tempvalue->calok =true;
+               }
                qb_temp[0] = tempvalue->shcode.toLocal8Bit();
                data.strIsuNo = qb_temp[0].data();
 
@@ -670,9 +703,11 @@ void xing::func_t0424OutBlock1(LPRECV_PACKET pRpData){
               qb_temp[9] = ordcnditpcode.toLocal8Bit();
               data.strOrdCndiTpCode = qb_temp[9].data();
 
+
+
               if(!tempvalue->loss_flag){
                   int result_3 = CSPAT00600_Request(true,data);
-                   tmf->logtxt->append(QString("func_t0424OutBlock1 to CSPAT00600_Request expcode = %1 hname = %2").arg(expcode).arg(hname));
+                   //tmf->logtxt->append(QString("func_t0424OutBlock1 to CSPAT00600_Request expcode = %1 hname = %2").arg(expcode).arg(hname));
                    one_shot_flag = true;
                    qDebug()<<QString("func_t0424OutBlock1 to CSPAT00600_Request expcode = %1 hname = %2").arg(expcode).arg(hname);
               }else if (tempvalue->loss_flag){
