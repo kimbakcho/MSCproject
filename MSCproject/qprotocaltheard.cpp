@@ -47,13 +47,18 @@ void qprotocaltheard::run(){
                 temp_rich->loss_flag=false;
                 temp_rich->obj_flag=false;
                 temp_rich->init_priceflag = true;
-                if(richdata->size()==0){
-                    temp_rich->first_jong = true;
-                }
+
 
                 reply_timeh = fromlist.at(10);
                 reply_timem = fromlist.at(12);
-                reply_time.setHMS(reply_timeh.toInt(),reply_timem.toInt()+2,20);
+                int ireply_timeh = reply_timeh.toInt();
+                int ireply_timem = reply_timem.toInt();
+                if(richdata->size()==0 && ireply_timeh==9 && ireply_timem<3){
+                    temp_rich->first_jong = true;
+                }
+
+
+                reply_time.setHMS(reply_timeh.toInt(),reply_timem.toInt()+1,20);
                 int i_reply_time = QTime(0,0,0).secsTo(reply_time);
                 //¸Å¼ö
                 price = temp_rich->price;
