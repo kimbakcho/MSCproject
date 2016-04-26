@@ -53,12 +53,12 @@ void qprotocaltheard::run(){
                 reply_timem = fromlist.at(12);
                 int ireply_timeh = reply_timeh.toInt();
                 int ireply_timem = reply_timem.toInt();
-                if(richdata->size()==0 && ireply_timeh==9 && ireply_timem<3){
+                if(richdata->size()==0 && ireply_timeh==9 && ireply_timem<2){
                     temp_rich->first_jong = true;
                 }
 
 
-                reply_time.setHMS(reply_timeh.toInt(),reply_timem.toInt()+1,20);
+                reply_time.setHMS(reply_timeh.toInt()+10,reply_timem.toInt()+1,20);
                 int i_reply_time = QTime(0,0,0).secsTo(reply_time);
                 //¸Å¼ö
                 price = temp_rich->price;
@@ -190,6 +190,7 @@ void qprotocaltheard::run(){
 
 
              int result_3=0;
+//                 if(i_reply_time>=QTime(0,0,0).secsTo(time)&& !x1->one_shot_flag){
                  if(i_reply_time>=QTime(0,0,0).secsTo(time)&& !x1->one_shot_flag){
                     result_3 = x1->CSPAT00600_Request(true,data060);
                  }else{

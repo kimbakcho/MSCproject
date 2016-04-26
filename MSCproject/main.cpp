@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     Tcpserverframe *tmf = new Tcpserverframe(protocollist,mutex);
     x1 = new xing(richdata,tmf);
     if(x1->init()){
-        if(x1->ETK_Connect(0)){
+        if(x1->ETK_Connect(1)){
 
         }else{
             qDebug()<<kor("접속 실패");

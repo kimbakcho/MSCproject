@@ -419,7 +419,7 @@ int xing::CSPAQ13700_Request(BOOL nNext,CSPAQ13700InBlock1data data){
      SetPacketData( pckInBlock.AcntNo        , sizeof( pckInBlock.AcntNo         ), data.AcntNo     , DATA_TYPE_STRING       );    // [string,   20] 계좌번호
      SetPacketData( pckInBlock.InptPwd       , sizeof( pckInBlock.InptPwd        ), data.InptPwd    , DATA_TYPE_STRING       );    // [string,    8] 비밀번호
      SetPacketData( pckInBlock.IsuNo         , sizeof( pckInBlock.IsuNo          ), data.IsuNo      , DATA_TYPE_STRING       );    // [string,    1] 잔고생성구분
-     SetPacketData( pckInBlock.OrdQty        , sizeof( pckInBlock.OrdQty         ), data.OrdQty     , DATA_TYPE_STRING       );    // [string,    1] 수수료적용구분
+     SetPacketData( pckInBlock.OrdQty        , sizeof( pckInBlock.OrdQty         ), data.OrdQty     , DATA_TYPE_LONG       );    // [string,    1] 수수료적용구분
 
      int nRqID = ETK_Request(szTrNo,&pckInBlock,sizeof(pckInBlock),nNext,szNextKey,30);
 
@@ -797,7 +797,8 @@ void xing::func_t0425OutBlock1(LPRECV_PACKET pRpData){
                 qb_temp_obj[4] = ordrem.toLocal8Bit();
                 data_obj.OrdQty = qb_temp_obj[4].data();
 
-                CSPAT00800_Request(true,data_obj);
+                int testvalue = CSPAT00800_Request(true,data_obj);
+                qDebug()<<testvalue;
             }
 
         }
