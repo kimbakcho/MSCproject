@@ -56,6 +56,7 @@ public:
 
 
 signals:
+    void sig_sendtxtlog(QString log);
 
 public slots:
     void serverstart();
@@ -65,6 +66,7 @@ public slots:
     void QEjaccnumber_change(QString str);
     void QEjpwumber_change(QString str);
     void QEjQLmoneyprice_change(QString str);
+    void slot_sendtxtlog(QString log);
 };
 
 #endif // TCPSERVERFRAME_H

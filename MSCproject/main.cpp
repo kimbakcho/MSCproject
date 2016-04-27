@@ -61,7 +61,5 @@ int main(int argc, char *argv[])
     tpricemoniter *tprice = new tpricemoniter(x1,richdata);
     tprice->start();
 
-
-
     return a.exec();
 }

@@ -79,6 +79,7 @@ Tcpserverframe::Tcpserverframe(QQueue<QByteArray> *protocollist,QMutex *mutex,QW
     connect(QEjaccnumber,SIGNAL(textEdited(QString)),this,SLOT(QEjaccnumber_change(QString)));
     connect(QEjpwumber,SIGNAL(textEdited(QString)),this,SLOT(QEjpwumber_change(QString)));
     connect(QEjQLmoneyprice,SIGNAL(textEdited(QString)),this,SLOT(QEjQLmoneyprice_change(QString)));
+    connect(this,SIGNAL(sig_sendtxtlog(QString)),this,SLOT(slot_sendtxtlog(QString)));
 
 }
 void Tcpserverframe::serverstart(){
@@ -137,4 +138,7 @@ void Tcpserverframe::remotestop(){
         tempcon->write("stop");
         tempcon->flush();
     }
+}
+void Tcpserverframe::slot_sendtxtlog(QString log){
+    logtxt->append(log);
 }

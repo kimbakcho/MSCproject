@@ -651,6 +651,23 @@ release\moc_xing.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h \
 		..\MSCproject\xing.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\xing.h -o release\moc_xing.cpp
 
@@ -815,6 +832,23 @@ release\moc_loginwiget.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h \
 		..\MSCproject\loginwiget.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\loginwiget.h -o release\moc_loginwiget.cpp
 
@@ -958,6 +992,23 @@ release\moc_tcpserverframe.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h \
 		..\MSCproject\tcpserverframe.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\tcpserverframe.h -o release\moc_tcpserverframe.cpp
 
@@ -1373,6 +1424,23 @@ release\moc_qprotocaltheard.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h \
 		..\MSCproject\qprotocaltheard.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\qprotocaltheard.h -o release\moc_qprotocaltheard.cpp
 
@@ -1537,6 +1605,23 @@ release\moc_tjango_th.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h \
 		..\MSCproject\tjango_th.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\tjango_th.h -o release\moc_tjango_th.cpp
 
@@ -1702,6 +1787,23 @@ release\moc_tpricemoniter.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h \
 		..\MSCproject\tpricemoniter.h
 	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Administrator/Documents/GitHub/MSCproject/MSCproject -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtNetwork -IC:/Qt/5.5/msvc2012/include/QtCore -I. ..\MSCproject\tpricemoniter.h -o release\moc_tpricemoniter.cpp
 
@@ -1884,6 +1986,23 @@ release\main.obj: ..\MSCproject\main.cpp ../MSCproject/widget.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QApplication \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qapplication.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
@@ -2164,7 +2283,24 @@ release\xing.obj: ..\MSCproject\xing.cpp ../MSCproject/xing.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h
 
 release\loginwiget.obj: ..\MSCproject\loginwiget.cpp ../MSCproject/loginwiget.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
@@ -2327,7 +2463,24 @@ release\loginwiget.obj: ..\MSCproject\loginwiget.cpp ../MSCproject/loginwiget.h 
 		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h
 
 release\tcpserverframe.obj: ..\MSCproject\tcpserverframe.cpp ../MSCproject/tcpserverframe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
@@ -2469,7 +2622,24 @@ release\tcpserverframe.obj: ..\MSCproject\tcpserverframe.cpp ../MSCproject/tcpse
 		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h
 
 release\servertheard.obj: ..\MSCproject\servertheard.cpp ../MSCproject/servertheard.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
@@ -2642,7 +2812,50 @@ release\qserversocket.obj: ..\MSCproject\qserversocket.cpp ../MSCproject/qserver
 		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h
+		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
+		../MSCproject/tcpserverframe.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGridLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QSettings \
+		C:\Qt\5.5\msvc2012\include\QtCore\qsettings.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QTextEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h
 
 release\qconnection.obj: ..\MSCproject\qconnection.cpp ../MSCproject/qconnection.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
@@ -2880,7 +3093,24 @@ release\qprotocaltheard.obj: ..\MSCproject\qprotocaltheard.cpp ../MSCproject/qpr
 		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h
 
 release\qrichdata.obj: ..\MSCproject\qrichdata.cpp ../MSCproject/qrichdata.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
@@ -3099,7 +3329,24 @@ release\tjango_th.obj: ..\MSCproject\tjango_th.cpp ../MSCproject/tjango_th.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h
 
 release\tpricemoniter.obj: ..\MSCproject\tpricemoniter.cpp ../MSCproject/tpricemoniter.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
@@ -3263,7 +3510,24 @@ release\tpricemoniter.obj: ..\MSCproject\tpricemoniter.cpp ../MSCproject/tpricem
 		C:\Qt\5.5\msvc2012\include\QtGui\qtextdocument.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QScrollBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollbar.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QListView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QStringListModel \
+		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h
 
 release\moc_widget.obj: release\moc_widget.cpp 
 

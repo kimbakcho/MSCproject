@@ -10,8 +10,6 @@ qprotocaltheard::qprotocaltheard(QQueue<QByteArray> *protocollist, QMap<QString,
     this->x1 = x1;
     this->tmf = tmf;
     this->mutex = mutex;
-
-
 }
 
 void qprotocaltheard::run(){
@@ -53,12 +51,12 @@ void qprotocaltheard::run(){
                 reply_timem = fromlist.at(12);
                 int ireply_timeh = reply_timeh.toInt();
                 int ireply_timem = reply_timem.toInt();
-                if(richdata->size()==0 && ireply_timeh==9 && ireply_timem<2){
-                    temp_rich->first_jong = true;
-                }
+//                if(richdata->size()==0 && ireply_timeh==9 && ireply_timem<2){
+//                    temp_rich->first_jong = true;
+//                }
 
 
-                reply_time.setHMS(reply_timeh.toInt()+10,reply_timem.toInt()+1,20);
+                reply_time.setHMS(reply_timeh.toInt(),reply_timem.toInt()+1,20);
                 int i_reply_time = QTime(0,0,0).secsTo(reply_time);
                 //¸Å¼ö
                 price = temp_rich->price;
@@ -136,11 +134,12 @@ void qprotocaltheard::run(){
                 real_tranding = "";
 
                 tpcode = "2";
-                if(temp_rich->first_jong){
-                    prcptncode = "03";
-                }else{
-                    prcptncode = "00";
-                }
+//                if(temp_rich->first_jong){
+//                    prcptncode = "03";
+//                }else{
+//                    prcptncode = "00";
+//                }
+                prcptncode = "00";
                 mgntrncode = "000";
                 loandt ="";
                 ordcnditpcode = "0";
@@ -190,14 +189,13 @@ void qprotocaltheard::run(){
 
 
              int result_3=0;
-//                 if(i_reply_time>=QTime(0,0,0).secsTo(time)&& !x1->one_shot_flag){
-                 if(i_reply_time>=QTime(0,0,0).secsTo(time)&& !x1->one_shot_flag){
+                 if(i_reply_time>=QTime(0,0,0).secsTo(time)){
+//                 if(i_reply_time>=QTime(0,0,0).secsTo(time)){
                     result_3 = x1->CSPAT00600_Request(true,data060);
                  }else{
-
                      richdata->insert(temp_rich->shcode,temp_rich);
-
                      QString log = QString("%1 %2 %3 %4 one_shot : %5").arg(fromdata).arg(timestr).arg(QString(" missbuy")).arg(real_tranding).arg(x1->one_shot_flag);
+                     emit tmf->sig_sendtxtlog(log);
                     // tmf->logtxt->append(log);
                      qDebug()<<fromdata<<timestr<<"missbuy"<<real_tranding;
 
@@ -208,6 +206,7 @@ void qprotocaltheard::run(){
 
                     QString log = QString("%1 %2 %3 %4").arg(fromdata).arg(timestr).arg(QString(" buy")).arg(real_tranding);
                     //tmf->logtxt->append(log);
+                    emit tmf->sig_sendtxtlog(log);
                     qDebug()<<fromdata<<timestr<<"buy"<<real_tranding;
                     if(!temp_rich->first_jong){
                         QByteArray qt_temp_1;
