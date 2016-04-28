@@ -543,33 +543,112 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
        QString hname = QString::fromLocal8Bit(pOutBlock->hname,20);
        QString shcode = QString::fromLocal8Bit(pOutBlock->shcode,6);
        QString price = QString::fromLocal8Bit(pOutBlock->price,8);
-       Qrichdata *data_temp1;
+       Qrichdata *temp_rich;
        int price_int = price.toInt();
        int loss_int;
        int obj_int;
-       int testvalue;
 
-       testvalue = richdata->size();
-       data_temp1= richdata->value(shcode);
-       loss_int = data_temp1->loss.toInt();
-       obj_int = data_temp1->obj.toInt();
+       QString tpcode;
+       QString prcptncode;
+       QString mgntrncode;
+       QString loandt;
+       QString ordcnditpcode;
+       QString ju_count;
+       QByteArray qb_temp[10];
+       CSPAT00600data data060;
+       int total_ordqty;
+       int real_money;
+       int real_price;
+       double price_double;
+       double per3;
+       double price_double_result;
+       double obj1_double;
+       double loss_double;
+       int obj1_result;
+       int loss_result;
+
+       temp_rich= richdata->value(shcode);
+
+       if(temp_rich->init_priceflag){
+            emit tmf->sig_sendtxtlog(QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
+                                     .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj));
+
+           qDebug()<<QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
+                                                        .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj);
+            price = QString("%1").arg(price_int);
+            temp_rich->price = price;
+            tpcode = "2";
+            prcptncode = "00";
+            mgntrncode = "000";
+            loandt ="";
+            ordcnditpcode = "0";
+
+            qb_temp[0] = temp_rich->shcode.toLocal8Bit();
+            data060.strIsuNo = qb_temp[0].data();
+
+            qb_temp[1] = tmf->QEjpwumber->text().toLocal8Bit();
+            data060.strInptPwd = qb_temp[1].data();
+
+            qb_temp[2] = tmf->QEjaccnumber->text().toLocal8Bit();
+            data060.strAcntNo = qb_temp[2].data();
+
+            //price qty
+            real_price = price.toInt();
+            real_money = tmf->QEjQLmoneyprice->text().toInt();
+            total_ordqty  = real_money/real_price;
+            ju_count.sprintf("%d",total_ordqty);
+            qb_temp[3] = ju_count.toLocal8Bit();
+            data060.strOrdQty = qb_temp[3].data();
+            //price
+            qb_temp[4] = price.toLocal8Bit();
+            data060.strOrdPrc = qb_temp[4].data();
+            //BnsTpCode
+            qb_temp[5] = tpcode.toLocal8Bit();
+            data060.strBnsTpCode = qb_temp[5].data();
+            //OrdprcPtnCode
+           qb_temp[6] = prcptncode.toLocal8Bit();
+           data060.strOrdprcPtnCode = qb_temp[6].data();
+           //MgntrnCode
+           qb_temp[7] = mgntrncode.toLocal8Bit();
+           data060.strMgntrnCode = qb_temp[7].data();
+           //LoanDt
+           qb_temp[8] = loandt.toLocal8Bit();
+           data060.strLoanDt = qb_temp[8].data();
+           //OrdCndiTpCode
+           qb_temp[9] = ordcnditpcode.toLocal8Bit();
+           data060.strOrdCndiTpCode = qb_temp[9].data();
+
+           price_double = price.toDouble();
+           per3 = price_double * 0.03;
+           obj1_double = price_double+per3;
+           obj1_result = (int)obj1_double;
+           loss_double = price_double-per3;
+           loss_result = (int)loss_double;
+
+
+
+
+           temp_rich->obj = QString("%1").arg(obj1_result);
+           temp_rich->loss = QString("%1").arg(loss_result);
+
+           int result_3 =  CSPAT00600_Request(true,data060);
+
+           emit tmf->sig_sendtxtlog(QString("modify price buy hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
+                                    .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj));
+
+           temp_rich->init_priceflag = false;
+       }
+
+       loss_int = temp_rich->loss.toInt();
+       obj_int = temp_rich->obj.toInt();
 
            if(loss_int>=price_int){
-               data_temp1->loss_flag=true;
+               temp_rich->loss_flag=true;
            }
            if(obj_int<=price_int){
-               data_temp1->obj_flag=true;
+               temp_rich->obj_flag=true;
            }
-           if(data_temp1->init_priceflag){
-                emit tmf->sig_sendtxtlog(QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
-                                         .arg(data_temp1->hname).arg(data_temp1->shcode).arg(data_temp1->price).arg(price_int).arg(data_temp1->loss).arg(data_temp1->obj));
-//               tmf->logtxt->append(QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
-//                                   .arg(data_temp1->hname).arg(data_temp1->shcode).arg(data_temp1->price).arg(price_int).arg(data_temp1->loss).arg(data_temp1->obj));
 
-               qDebug()<<QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
-                                                            .arg(data_temp1->hname).arg(data_temp1->shcode).arg(data_temp1->price).arg(price_int).arg(data_temp1->loss).arg(data_temp1->obj);
-               data_temp1->init_priceflag = false;
-           }
 }
 
 
