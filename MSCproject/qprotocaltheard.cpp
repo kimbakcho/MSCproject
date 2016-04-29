@@ -195,6 +195,7 @@ void qprotocaltheard::run(){
 //                 if(i_reply_time>=QTime(0,0,0).secsTo(time)){
                     //result_3 = x1->CSPAT00600_Request(true,data060);
                      result_3 = 1;
+                     temp_rich->buyuse = true;
                  }else{
                      richdata->insert(temp_rich->shcode,temp_rich);
                      QString log = QString("%1 %2 %3 %4 one_shot : %5").arg(fromdata).arg(timestr).arg(QString(" missbuy")).arg(real_tranding).arg(x1->one_shot_flag);

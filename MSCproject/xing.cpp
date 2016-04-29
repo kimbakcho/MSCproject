@@ -630,8 +630,9 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
 
            temp_rich->obj = QString("%1").arg(obj1_result);
            temp_rich->loss = QString("%1").arg(loss_result);
-
-           int result_3 =  CSPAT00600_Request(true,data060);
+           if(temp_rich->buyuse){
+                int result_3 =  CSPAT00600_Request(true,data060);
+           }
 
            emit tmf->sig_sendtxtlog(QString("modify price buy hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
                                     .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj));
@@ -757,6 +758,7 @@ void xing::func_t0424OutBlock1(LPRECV_PACKET pRpData){
 
 
               if(!tempvalue->loss_flag){
+
                   int result_3 = CSPAT00600_Request(true,data);
                    //tmf->logtxt->append(QString("func_t0424OutBlock1 to CSPAT00600_Request expcode = %1 hname = %2").arg(expcode).arg(hname));
                   emit tmf->sig_sendtxtlog(QString("func_t0424OutBlock1 not loss_flag to CSPAT00600_Request expcode = %1 hname = %2").arg(expcode).arg(hname));

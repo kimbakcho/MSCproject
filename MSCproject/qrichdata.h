@@ -22,6 +22,7 @@ public:
     bool init_priceflag;
     bool first_jong;
     bool calok;
+    bool buyuse;
 
 
 signals:
