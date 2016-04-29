@@ -561,6 +561,7 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
        int real_price;
        double price_double;
        double per3;
+       double per2;
        double price_double_result;
        double obj1_double;
        double loss_double;
@@ -620,9 +621,10 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
 
            price_double = price.toDouble();
            per3 = price_double * 0.03;
+           per2 = price_double * 0.02;
            obj1_double = price_double+per3;
            obj1_result = (int)obj1_double;
-           loss_double = price_double-per3;
+           loss_double = price_double-per2;
            loss_result = (int)loss_double;
 
 
