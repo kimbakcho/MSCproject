@@ -543,6 +543,10 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
        QString hname = QString::fromLocal8Bit(pOutBlock->hname,20);
        QString shcode = QString::fromLocal8Bit(pOutBlock->shcode,6);
        QString price = QString::fromLocal8Bit(pOutBlock->price,8);
+       QString offer  = QString::fromLocal8Bit(pOutBlock->offer,12);
+       QString bid  = QString::fromLocal8Bit(pOutBlock->bid,12);
+       QString preoffercha  = QString::fromLocal8Bit(pOutBlock->preoffercha,12);
+       QString prebidcha  = QString::fromLocal8Bit(pOutBlock->prebidcha,12);
        Qrichdata *temp_rich;
        int price_int = price.toInt();
        int loss_int;
@@ -574,8 +578,9 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
             emit tmf->sig_sendtxtlog(QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
                                      .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj));
 
-           qDebug()<<QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
-                                                        .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj);
+           qDebug()<<QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6,offer = %7,bid = %8,preoffercha= %9,prebidcha = %10")
+                                                        .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj)
+                                                        .arg(offer).arg(bid).arg(preoffercha).arg(prebidcha);
             price = QString("%1").arg(price_int);
             temp_rich->price = price;
             tpcode = "2";
@@ -624,7 +629,7 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
            per2 = price_double * 0.02;
            obj1_double = price_double+per3;
            obj1_result = (int)obj1_double;
-           loss_double = price_double-per2;
+           loss_double = price_double-per3;
            loss_result = (int)loss_double;
 
 
