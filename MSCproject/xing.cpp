@@ -578,9 +578,9 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
             emit tmf->sig_sendtxtlog(QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
                                      .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj));
 
-           qDebug()<<QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6,offer = %7,bid = %8,preoffercha= %9,prebidcha = %10")
-                                                        .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj)
-                                                        .arg(offer).arg(bid).arg(preoffercha).arg(prebidcha);
+           qDebug()<<QString("start price hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
+                                                        .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj);
+
             price = QString("%1").arg(price_int);
             temp_rich->price = price;
             tpcode = "2";
@@ -641,8 +641,9 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
                 int result_3 =  CSPAT00600_Request(true,data060);
            }
 
-           emit tmf->sig_sendtxtlog(QString("modify price buy hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
-                                    .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj));
+           emit tmf->sig_sendtxtlog(QString("modify price buy hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6,offer = %7,bid = %8,preoffercha= %9,prebidcha = %10")
+                                    .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj)
+                                    .arg(offer).arg(bid).arg(preoffercha).arg(prebidcha));
 
            temp_rich->init_priceflag = false;
        }
