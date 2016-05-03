@@ -294,6 +294,7 @@ void WHttpwiget::loadfinished(QNetworkReply *reply){
             lasturl.setUrl(str);
             manager->get(lasturl);
         }
+        reply->deleteLater();
 }
 
 void WHttpwiget::sitemoniter(){
