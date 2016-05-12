@@ -113,6 +113,9 @@ Makefile: ..\MSCproject\MSCproject.pro D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\win
 		D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_designercomponents_private.pri \
 		D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_enginio.pri \
 		D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_enginio_private.pri \
+		C:\build-qtftp-Desktop_Qt_5_5_1_MSVC2013_1_32bit-Release\mkspecs\modules-inst\qt_lib_ftp.pri \
+		C:\build-qtftp-Desktop_Qt_5_5_1_MSVC2013_1_32bit-Release\mkspecs\modules-inst\qt_lib_ftp_private.pri \
+		D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_ftp.pri \
 		D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_gui.pri \
 		D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_gui_private.pri \
 		D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_help.pri \
@@ -259,6 +262,9 @@ D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_designer_private.pri:
 D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_designercomponents_private.pri:
 D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_enginio.pri:
 D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_enginio_private.pri:
+C:\build-qtftp-Desktop_Qt_5_5_1_MSVC2013_1_32bit-Release\mkspecs\modules-inst\qt_lib_ftp.pri:
+C:\build-qtftp-Desktop_Qt_5_5_1_MSVC2013_1_32bit-Release\mkspecs\modules-inst\qt_lib_ftp_private.pri:
+D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_ftp.pri:
 D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_gui.pri:
 D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_gui_private.pri:
 D:\Qt_32\Qt5.5.1\5.5\msvc2013\mkspecs\modules\qt_lib_help.pri:

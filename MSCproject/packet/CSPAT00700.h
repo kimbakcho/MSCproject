@@ -20,6 +20,20 @@ typedef struct _CSPAT00700InBlock1
     char    OrdPrc              [  13];    // [double, 13.2] 주문가                          StartPos 74, Length 13
 } CSPAT00700InBlock1, *LPCSPAT00700InBlock1;
 #define NAME_CSPAT00700InBlock1     "CSPAT00700InBlock1"
+typedef struct _CSPAT00700InBlock1data
+{
+    char    *OrgOrdNo            ;    // [long  ,   10] 원주문번호                      StartPos 5, Length 10
+    char    *AcntNo              ;    // [string,   20] 계좌번호                        StartPos 15, Length 20
+    char    *InptPwd             ;    // [string,    8] 입력비밀번호                    StartPos 35, Length 8
+    char    *IsuNo               ;    // [string,   12] 종목번호                        StartPos 43, Length 12
+    char    *OrdQty              ;    // [long  ,   16] 주문수량                        StartPos 55, Length 16
+    char    *OrdprcPtnCode       ;    // [string,    2] 호가유형코드                    StartPos 71, Length 2
+    char    *OrdCndiTpCode       ;    // [string,    1] 주문조건구분                    StartPos 73, Length 1
+    char    *OrdPrc              ;    // [double, 13.2] 주문가                          StartPos 55, Length 16
+} CSPAT00700InBlock1data;
+
+
+
 
 // In(*EMPTY*)                    
 typedef struct _CSPAT00700OutBlock1

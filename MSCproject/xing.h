@@ -13,6 +13,7 @@
 #include "./packet/cspaq13700.h"
 #include "./packet/cspaq12300.h"
 #include "./packet/CSPAT00800.h"
+#include "./packet/CSPAT00700.h"
 #include "./packet/t0425.h"
 #include <QVector>
 #include <QMap>
@@ -187,6 +188,7 @@ public:
     int CSPAT00600_Request(BOOL nNext,CSPAT00600data data);
     int CSPAQ13700_Request(BOOL nNext,CSPAQ13700InBlock1data data);
     int CSPAQ12300_Request(BOOL nNext,CSPAQ12300InBlock1data data);
+    int CSPAT00700_Request(BOOL nNext,CSPAT00700InBlock1data data);
     int CSPAT00800_Request(BOOL nNext,CSPAT00800InBlock1data data);
     int t0424_Request(BOOL nNext,t0424InBlockdata data);
     int t0425_Request(BOOL nNext, t0425InBlockdata data);

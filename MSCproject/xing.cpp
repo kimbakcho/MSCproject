@@ -408,6 +408,26 @@ int xing::CSPAQ13700_Request(BOOL nNext,CSPAQ13700InBlock1data data){
      return nRqID;
  }
 
+ int xing::CSPAT00700_Request(BOOL nNext,CSPAT00700InBlock1data data){
+     CSPAT00700InBlock1	pckInBlock;
+     char			szTrNo[]		= "CSPAT00700";
+     char			szNextKey[]		= "";
+
+     memset(&pckInBlock,' ',sizeof(pckInBlock));
+
+     SetPacketData( pckInBlock.OrgOrdNo      , sizeof( pckInBlock.OrgOrdNo       ), data.OrgOrdNo   , DATA_TYPE_LONG         );    // [long  ,    5] 레코드갯수
+     SetPacketData( pckInBlock.AcntNo        , sizeof( pckInBlock.AcntNo         ), data.AcntNo     , DATA_TYPE_STRING       );    // [string,   20] 계좌번호
+     SetPacketData( pckInBlock.InptPwd       , sizeof( pckInBlock.InptPwd        ), data.InptPwd    , DATA_TYPE_STRING       );    // [string,    8] 비밀번호
+     SetPacketData( pckInBlock.IsuNo         , sizeof( pckInBlock.IsuNo          ), data.IsuNo      , DATA_TYPE_STRING       );    // [string,    1] 잔고생성구분
+     SetPacketData( pckInBlock.OrdQty        , sizeof( pckInBlock.OrdQty         ), data.OrdQty     , DATA_TYPE_LONG       );    // [string,    1] 수수료적용구분
+     SetPacketData( pckInBlock.OrdprcPtnCode        , sizeof( pckInBlock.OrdprcPtnCode         ), data.OrdprcPtnCode     , DATA_TYPE_STRING       );    // [string,    1] 수수료적용구분
+     SetPacketData( pckInBlock.OrdCndiTpCode        , sizeof( pckInBlock.OrdCndiTpCode         ), data.OrdCndiTpCode     , DATA_TYPE_LONG       );    // [string,    1] 수수료적용구분
+     SetPacketData( pckInBlock.OrdPrc       , sizeof( pckInBlock.OrdPrc        ), data.OrdPrc       , DATA_TYPE_FLOAT_DOT, 2 );	// 주문가, Header Type이 B 인 경우 Data Type이 실수면 소수점을 포함해야 한다.
+     int nRqID = ETK_Request(szTrNo,&pckInBlock,sizeof(pckInBlock),nNext,szNextKey,30);
+
+     return nRqID;
+ }
+
  int xing::CSPAT00800_Request(BOOL nNext,CSPAT00800InBlock1data data){
      CSPAT00800InBlock1	pckInBlock;
      char			szTrNo[]		= "CSPAT00800";
@@ -415,7 +435,7 @@ int xing::CSPAQ13700_Request(BOOL nNext,CSPAQ13700InBlock1data data){
 
      memset(&pckInBlock,' ',sizeof(pckInBlock));
 
-     SetPacketData( pckInBlock.OrgOrdNo      , sizeof( pckInBlock.OrgOrdNo       ), data.OrgOrdNo   , DATA_TYPE_STRING         );    // [long  ,    5] 레코드갯수
+     SetPacketData( pckInBlock.OrgOrdNo      , sizeof( pckInBlock.OrgOrdNo       ), data.OrgOrdNo   , DATA_TYPE_LONG         );    // [long  ,    5] 레코드갯수
      SetPacketData( pckInBlock.AcntNo        , sizeof( pckInBlock.AcntNo         ), data.AcntNo     , DATA_TYPE_STRING       );    // [string,   20] 계좌번호
      SetPacketData( pckInBlock.InptPwd       , sizeof( pckInBlock.InptPwd        ), data.InptPwd    , DATA_TYPE_STRING       );    // [string,    8] 비밀번호
      SetPacketData( pckInBlock.IsuNo         , sizeof( pckInBlock.IsuNo          ), data.IsuNo      , DATA_TYPE_STRING       );    // [string,    1] 잔고생성구분
@@ -643,22 +663,37 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
 
            temp_rich->obj = QString("%1").arg(obj1_result);
            temp_rich->loss = QString("%1").arg(loss_result);
+
+
+           temp_rich->buytime = QTime::currentTime();
+           temp_rich->limittime = temp_rich->buytime.addSecs(900);
+           temp_rich->limittimesec = QTime(0,0,0).secsTo(temp_rich->limittime);
+
+
+
            if(temp_rich->buyuse){
                 int result_3 =  CSPAT00600_Request(true,data060);
            }
-           offer_d = offer.toDouble();
-           bid_d = bid.toDouble();
-           signal_1 = offer_d/bid_d;
-           preoffercha_d = preoffercha.toDouble();
-           prebidcha_d = prebidcha.toDouble();
-           signal_2 = preoffercha_d/prebidcha_d;
+//           offer_d = offer.toDouble();
+//           bid_d = bid.toDouble();
+//           signal_1 = offer_d/bid_d;
+//           preoffercha_d = preoffercha.toDouble();
+//           prebidcha_d = prebidcha.toDouble();
+//           signal_2 = preoffercha_d/prebidcha_d;
 
-           emit tmf->sig_sendtxtlog(QString("modify price buy hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6,offer = %7,bid = %8,preoffercha = %9,prebidcha = %10,signal_1 = %11,signal_2 = %12")
-                                    .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj)
-                                    .arg(offer).arg(bid).arg(preoffercha).arg(prebidcha).arg(signal_1).arg(signal_2));
+           emit tmf->sig_sendtxtlog(QString("modify price buy hname = %1,shcode = %2,present price =%3 ,buyprice = %4,loss = %5,1obj = %6")
+                                    .arg(temp_rich->hname).arg(temp_rich->shcode).arg(temp_rich->price).arg(price_int).arg(temp_rich->loss).arg(temp_rich->obj));
 
            temp_rich->init_priceflag = false;
        }
+       int currenttimesec = QTime(0,0,0).secsTo(QTime::currentTime());
+
+       if(currenttimesec >= temp_rich->limittimesec){
+           temp_rich->limittimeflag = true;
+           emit tmf->sig_sendtxtlog(QString("limit time hname = %1 times = %2").arg(temp_rich->hname).arg(temp_rich->limittime.toString("hh:mm:ss")));
+       }
+
+
 
        loss_int = temp_rich->loss.toInt();
        obj_int = temp_rich->obj.toInt();
@@ -853,7 +888,7 @@ void xing::func_t0425OutBlock1(LPRECV_PACKET pRpData){
                 CSPAT00800_Request(true,data_loss);
                 emit tmf->sig_sendtxtlog(QString("lossflag cancle to %1").arg(hname));
             }
-            if((tempvalue->obj_flag) && medosu.compare("매수")){
+            if((tempvalue->obj_flag)&& medosu.compare("매수")){
                 //매수 취소 주문
                 QByteArray qb_temp_obj[10];
                 CSPAT00800InBlock1data data_obj;
@@ -875,6 +910,77 @@ void xing::func_t0425OutBlock1(LPRECV_PACKET pRpData){
 
                 int testvalue = CSPAT00800_Request(true,data_obj);
                 emit tmf->sig_sendtxtlog(QString("objflag cancle to %1").arg(hname));
+            }
+            if((tempvalue->limittimeflag)&& medosu.compare("매수")){
+                //매수 취소 주문
+                QByteArray qb_temp_obj[10];
+                CSPAT00800InBlock1data data_obj;
+
+                qb_temp_obj[0] = ordno.toLocal8Bit();
+                data_obj.OrgOrdNo = qb_temp_obj[0].data();
+
+                qb_temp_obj[1] = tmf->QEjaccnumber->text().toLocal8Bit();
+                data_obj.AcntNo = qb_temp_obj[1].data();
+
+                qb_temp_obj[2] = tmf->QEjpwumber->text().toLocal8Bit();
+                data_obj.InptPwd = qb_temp_obj[2].data();
+
+                qb_temp_obj[3] = expcode.toLocal8Bit();
+                data_obj.IsuNo = qb_temp_obj[3].data();
+
+                qb_temp_obj[4] = ordrem.toLocal8Bit();
+                data_obj.OrdQty = qb_temp_obj[4].data();
+
+                int testvalue = CSPAT00800_Request(true,data_obj);
+                emit tmf->sig_sendtxtlog(QString("limittimeflag masu to %1").arg(hname));
+            }
+            if((tempvalue->limittimeflag)&& medosu.compare("매도")){
+                //정정 주문 15분이 지날 경우
+                QString type_1 = QString("00");
+                QString type_2 = QString("0");
+                double price_double_l = tempvalue->price.toDouble();
+                double per1 = price_double_l * 0.01;
+
+                double obj1_double_1 = price_double_l+per1;
+                int obj1_result_1 = (int)obj1_double_1;
+                double loss_double_1 = price_double_l-per1;
+                int loss_result_1 = (int)loss_double_1;
+
+                tempvalue->obj = QString("%1").arg(obj1_result_1);
+                tempvalue->loss = QString("%1").arg(loss_result_1);
+
+
+
+                QByteArray qb_temp_obj[10];
+                CSPAT00700InBlock1data data_obj;
+
+                qb_temp_obj[0] = ordno.toLocal8Bit();
+                data_obj.OrgOrdNo = qb_temp_obj[0].data();
+
+                qb_temp_obj[1] = tmf->QEjaccnumber->text().toLocal8Bit();
+                data_obj.AcntNo = qb_temp_obj[1].data();
+
+                qb_temp_obj[2] = tmf->QEjpwumber->text().toLocal8Bit();
+                data_obj.InptPwd = qb_temp_obj[2].data();
+
+                qb_temp_obj[3] = expcode.toLocal8Bit();
+                data_obj.IsuNo = qb_temp_obj[3].data();
+
+                qb_temp_obj[4] = ordrem.toLocal8Bit();
+                data_obj.OrdQty = qb_temp_obj[4].data();
+
+                qb_temp_obj[5] = type_1.toLocal8Bit();
+                data_obj.OrdprcPtnCode = qb_temp_obj[5].data();
+
+                qb_temp_obj[6] = type_2.toLocal8Bit();
+                data_obj.OrdprcPtnCode = qb_temp_obj[6].data();
+
+
+
+                int testvalue = CSPAT00800_Request(true,data_obj);
+
+
+                emit tmf->sig_sendtxtlog(QString("limittimeflag mado to %1").arg(hname));
             }
 
         }

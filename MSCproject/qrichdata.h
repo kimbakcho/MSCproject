@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QTime>
 
 class Qrichdata
 {
@@ -23,6 +24,10 @@ public:
     bool first_jong;
     bool calok;
     bool buyuse;
+    QTime buytime;
+    QTime limittime;
+    bool limittimeflag;
+    int limittimesec;
 
 
 signals:
