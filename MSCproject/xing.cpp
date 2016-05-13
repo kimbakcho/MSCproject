@@ -690,7 +690,7 @@ void xing::func_t1101outblock(LPRECV_PACKET pRpData){
 
        if(currenttimesec >= temp_rich->limittimesec){
            temp_rich->limittimeflag = true;
-           emit tmf->sig_sendtxtlog(QString("limit time hname = %1 times = %2").arg(temp_rich->hname).arg(temp_rich->limittime.toString("hh:mm:ss")));
+           //emit tmf->sig_sendtxtlog(QString("limit time hname = %1 times = %2").arg(temp_rich->hname).arg(temp_rich->limittime.toString("hh:mm:ss")));
        }
 
 
@@ -934,7 +934,7 @@ void xing::func_t0425OutBlock1(LPRECV_PACKET pRpData){
                 int testvalue = CSPAT00800_Request(true,data_obj);
                 emit tmf->sig_sendtxtlog(QString("limittimeflag masu to %1").arg(hname));
             }
-            if((tempvalue->limittimeflag)&& medosu.compare("매도")){
+            if((tempvalue->limittimeflag)&& !tempvalue->limittimeflag_enter && medosu.compare("매도")){
                 //정정 주문 15분이 지날 경우
                 QString type_1 = QString("00");
                 QString type_2 = QString("0");
@@ -973,12 +973,14 @@ void xing::func_t0425OutBlock1(LPRECV_PACKET pRpData){
                 data_obj.OrdprcPtnCode = qb_temp_obj[5].data();
 
                 qb_temp_obj[6] = type_2.toLocal8Bit();
-                data_obj.OrdprcPtnCode = qb_temp_obj[6].data();
+                data_obj.OrdCndiTpCode = qb_temp_obj[6].data();
 
+                qb_temp_obj[7] = tempvalue->obj.toLocal8Bit();
+                data_obj.OrdPrc = qb_temp_obj[7].data();
 
+                tempvalue->limittimeflag_enter = true;
 
-                int testvalue = CSPAT00800_Request(true,data_obj);
-
+                int testvalue = CSPAT00700_Request(true,data_obj);
 
                 emit tmf->sig_sendtxtlog(QString("limittimeflag mado to %1").arg(hname));
             }

@@ -24,10 +24,12 @@ public:
     bool first_jong;
     bool calok;
     bool buyuse;
+    bool limittimeflag;
+    bool limittimeflag_enter;
+    int limittimesec;
     QTime buytime;
     QTime limittime;
-    bool limittimeflag;
-    int limittimesec;
+
 
 
 signals:

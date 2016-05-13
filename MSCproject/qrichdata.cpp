@@ -6,6 +6,8 @@ Qrichdata::Qrichdata()
     first_jong = false;
     calok=false;
     buyuse=false;
+    limittimesec = 0;
     limittimeflag = false;
+    limittimeflag_enter = false;
 }
 

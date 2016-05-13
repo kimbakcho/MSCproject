@@ -618,6 +618,7 @@ debug\moc_xing.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		..\MSCproject\packet\cspaq13700.h \
 		..\MSCproject\packet\cspaq12300.h \
 		..\MSCproject\packet\CSPAT00800.h \
+		..\MSCproject\packet\CSPAT00700.h \
 		..\MSCproject\packet\t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
@@ -819,6 +820,7 @@ debug\moc_loginwiget.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		..\MSCproject\packet\cspaq13700.h \
 		..\MSCproject\packet\cspaq12300.h \
 		..\MSCproject\packet\CSPAT00800.h \
+		..\MSCproject\packet\CSPAT00700.h \
 		..\MSCproject\packet\t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
@@ -1344,9 +1346,9 @@ debug\moc_qprotocaltheard.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
 		..\MSCproject\qrichdata.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QString \
-		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
 		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
 		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
 		C:\Qt\5.5\msvc2012\include\QtCore\QTextCodec \
 		C:\Qt\5.5\msvc2012\include\QtCore\qtextcodec.h \
 		..\MSCproject\xing.h \
@@ -1396,6 +1398,7 @@ debug\moc_qprotocaltheard.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		..\MSCproject\packet\cspaq13700.h \
 		..\MSCproject\packet\cspaq12300.h \
 		..\MSCproject\packet\CSPAT00800.h \
+		..\MSCproject\packet\CSPAT00700.h \
 		..\MSCproject\packet\t0425.h \
 		..\MSCproject\tcpserverframe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
@@ -1573,6 +1576,7 @@ debug\moc_tjango_th.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		..\MSCproject\packet\cspaq13700.h \
 		..\MSCproject\packet\cspaq12300.h \
 		..\MSCproject\packet\CSPAT00800.h \
+		..\MSCproject\packet\CSPAT00700.h \
 		..\MSCproject\packet\t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
@@ -1708,6 +1712,8 @@ debug\moc_tpricemoniter.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QString \
 		..\MSCproject\qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
 		..\MSCproject\xing.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
@@ -1748,8 +1754,6 @@ debug\moc_tpricemoniter.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QLibrary \
 		C:\Qt\5.5\msvc2012\include\QtCore\qlibrary.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
-		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
 		..\MSCproject\Packet\t1452.h \
 		..\MSCproject\Packet\t0424.h \
 		..\MSCproject\Packet\t1101.h \
@@ -1757,6 +1761,7 @@ debug\moc_tpricemoniter.cpp: C:\Qt\5.5\msvc2012\include\QtCore\QObject \
 		..\MSCproject\packet\cspaq13700.h \
 		..\MSCproject\packet\cspaq12300.h \
 		..\MSCproject\packet\CSPAT00800.h \
+		..\MSCproject\packet\CSPAT00700.h \
 		..\MSCproject\packet\t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
@@ -1973,6 +1978,7 @@ debug\main.obj: ..\MSCproject\main.cpp ../MSCproject/widget.h \
 		../MSCproject/packet/cspaq13700.h \
 		../MSCproject/packet/cspaq12300.h \
 		../MSCproject/packet/CSPAT00800.h \
+		../MSCproject/packet/CSPAT00700.h \
 		../MSCproject/packet/t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
@@ -2251,6 +2257,7 @@ debug\xing.obj: ..\MSCproject\xing.cpp ../MSCproject/xing.h \
 		../MSCproject/packet/cspaq13700.h \
 		../MSCproject/packet/cspaq12300.h \
 		../MSCproject/packet/CSPAT00800.h \
+		../MSCproject/packet/CSPAT00700.h \
 		../MSCproject/packet/t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
@@ -2451,6 +2458,7 @@ debug\loginwiget.obj: ..\MSCproject\loginwiget.cpp ../MSCproject/loginwiget.h \
 		../MSCproject/packet/cspaq13700.h \
 		../MSCproject/packet/cspaq12300.h \
 		../MSCproject/packet/CSPAT00800.h \
+		../MSCproject/packet/CSPAT00700.h \
 		../MSCproject/packet/t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
@@ -3014,9 +3022,9 @@ debug\qprotocaltheard.obj: ..\MSCproject\qprotocaltheard.cpp ../MSCproject/qprot
 		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
 		../MSCproject/qrichdata.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QString \
-		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
 		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
 		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
 		C:\Qt\5.5\msvc2012\include\QtCore\QTextCodec \
 		C:\Qt\5.5\msvc2012\include\QtCore\qtextcodec.h \
 		../MSCproject/xing.h \
@@ -3066,6 +3074,7 @@ debug\qprotocaltheard.obj: ..\MSCproject\qprotocaltheard.cpp ../MSCproject/qprot
 		../MSCproject/packet/cspaq13700.h \
 		../MSCproject/packet/cspaq12300.h \
 		../MSCproject/packet/CSPAT00800.h \
+		../MSCproject/packet/CSPAT00700.h \
 		../MSCproject/packet/t0425.h \
 		../MSCproject/tcpserverframe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
@@ -3177,7 +3186,12 @@ debug\qrichdata.obj: ..\MSCproject\qrichdata.cpp ../MSCproject/qrichdata.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\QString
+		C:\Qt\5.5\msvc2012\include\QtCore\QString \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h
 
 debug\tjango_th.obj: ..\MSCproject\tjango_th.cpp ../MSCproject/tjango_th.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QObject \
@@ -3298,6 +3312,7 @@ debug\tjango_th.obj: ..\MSCproject\tjango_th.cpp ../MSCproject/tjango_th.h \
 		../MSCproject/packet/cspaq13700.h \
 		../MSCproject/packet/cspaq12300.h \
 		../MSCproject/packet/CSPAT00800.h \
+		../MSCproject/packet/CSPAT00700.h \
 		../MSCproject/packet/t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
@@ -3432,6 +3447,8 @@ debug\tpricemoniter.obj: ..\MSCproject\tpricemoniter.cpp ../MSCproject/tpricemon
 		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QString \
 		../MSCproject/qrichdata.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
+		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
 		../MSCproject/xing.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
@@ -3472,8 +3489,6 @@ debug\tpricemoniter.obj: ..\MSCproject\tpricemoniter.cpp ../MSCproject/tpricemon
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QLibrary \
 		C:\Qt\5.5\msvc2012\include\QtCore\qlibrary.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\QTime \
-		C:\Qt\5.5\msvc2012\include\QtCore\qdatetime.h \
 		..\MSCproject\Packet\t1452.h \
 		..\MSCproject\Packet\t0424.h \
 		..\MSCproject\Packet\t1101.h \
@@ -3481,6 +3496,7 @@ debug\tpricemoniter.obj: ..\MSCproject\tpricemoniter.cpp ../MSCproject/tpricemon
 		../MSCproject/packet/cspaq13700.h \
 		../MSCproject/packet/cspaq12300.h \
 		../MSCproject/packet/CSPAT00800.h \
+		../MSCproject/packet/CSPAT00700.h \
 		../MSCproject/packet/t0425.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QVector \
 		C:\Qt\5.5\msvc2012\include\QtCore\QMap \
