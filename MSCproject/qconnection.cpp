@@ -11,9 +11,9 @@ void Qconnection::readyforready(){
     readbuffer = readAll();
     int count = readbuffer.count();
     for(int i=0;i<count;i++){
-        if((unsigned char)readbuffer.at(i)==0xAA){
+        if((unsigned char)readbuffer.at(i)==0xFE){
            protocoldata.clear();
-        }else if((unsigned char)readbuffer.at(i)== 0xAB){
+        }else if((unsigned char)readbuffer.at(i)== 0xFF){
             mutex->lock();
             protocollist->enqueue(protocoldata);
             //qDebug()<<kor(protocoldata);

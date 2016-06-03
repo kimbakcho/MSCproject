@@ -34,6 +34,7 @@ void qprotocaltheard::run(){
             hname.replace(" ","");
             shcodedata=shcodemap->value(hname);
             if(!richdata->contains(shcodedata)){
+
                 Qrichdata * temp_rich = new Qrichdata();
                 temp_data1 = fromlist.at(2);
 
@@ -222,6 +223,7 @@ void qprotocaltheard::run(){
                  //qDebug()<<fromdata;
 
             }
+
         }
     }
 }
