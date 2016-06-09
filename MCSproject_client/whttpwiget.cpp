@@ -185,9 +185,11 @@ void WHttpwiget::loadfinished(QNetworkReply *reply){
                                                               .arg(hname_temp).arg(Cpricetemp).arg(Closspricetemp).arg(Cobjpricetemp).arg(reply_timeh).arg(reply_timem);
                                 QByteArray senddata_byte = senddata.toLocal8Bit();
                                 QByteArray result_send_data;
-                                result_send_data.append(0xFE);
+                                result_send_data.append(0xFA);
+                                result_send_data.append(0xFB);
                                 result_send_data.append(senddata_byte);
-                                result_send_data.append(0xFF);
+                                result_send_data.append(0xFC);
+                                result_send_data.append(0xFD);
                                 tcsocket->write(result_send_data);
                                 tcsocket->flush();
                             }
